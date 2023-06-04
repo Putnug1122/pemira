@@ -2,6 +2,9 @@ import { Center, SegmentedControl, Box, Space, Stack } from '@mantine/core';
 import { Chrono } from 'react-chrono';
 import { IconCode, IconExternalLink, IconEye } from '@tabler/icons-react';
 import { useState } from 'react';
+import { DPMTimeline } from './DPM';
+import { KetingTimeline } from './Keting';
+import { SemaTimeline } from './Sema';
 
 const items = [
   {
@@ -25,7 +28,7 @@ const items = [
 ];
 
 export function TimelineSection() {
-  const [s, setS] = useState('preview');
+  const [s, setS] = useState('DPM');
 
   return (
     <Stack spacing="xl">
@@ -33,44 +36,44 @@ export function TimelineSection() {
         fullWidth
         size="md"
         color="yellow"
-        defaultValue="preview"
+        defaultValue="DPM"
         value={s}
         onChange={(value) => setS(value)}
         transitionTimingFunction="ease"
         data={[
           {
-            value: 'preview',
+            value: 'DPM',
             label: (
               <Center>
                 <IconEye size="1rem" />
-                <Box ml={10}>Preview</Box>
+                <Box ml={10}>DPM</Box>
               </Center>
             ),
           },
           {
-            value: 'code',
+            value: 'SEMA',
             label: (
               <Center>
                 <IconCode size="1rem" />
-                <Box ml={10}>Code</Box>
+                <Box ml={10}>SEMA</Box>
               </Center>
             ),
           },
           {
-            value: 'export',
+            value: 'Keting',
             label: (
               <Center>
                 <IconExternalLink size="1rem" />
-                <Box ml={10}>Export</Box>
+                <Box ml={10}>Keting</Box>
               </Center>
             ),
           },
         ]}
       />
 
-      {s === 'preview' && <Chrono items={items} mode="VERTICAL_ALTERNATING" />}
-      {s === 'code' && <Box>Code</Box>}
-      {s === 'export' && <Box>Export</Box>}
+      {s === 'DPM' && <DPMTimeline />}
+      {s === 'SEMA' && <SemaTimeline />}
+      {s === 'Keting' && <KetingTimeline />}
     </Stack>
   );
 }
