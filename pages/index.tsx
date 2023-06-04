@@ -1,10 +1,10 @@
-import { Welcome } from '../components/Welcome/Welcome';
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
 import { HeaderMegaMenu } from '../components/Header/Header';
 import { FooterLinks } from '../components/Footer/Footer';
 import { HeroBullets } from '../components/Hero/Hero';
 import { FaqSimple } from '../components/Pilih/Pilih';
 import { TimelineSection } from '../components/TImeline/Timeline';
+import { Center, Title } from '@mantine/core';
+import { HeroTitle } from '../components/Hero/HeroTitile';
 
 const data = [
   {
@@ -77,10 +77,17 @@ export default function HomePage() {
     <>
       <HeaderMegaMenu />
       {/* <Welcome /> */}
-      <HeroBullets />
+      <HeroTitle />
       {/* <ColorSchemeToggle /> */}
       <FaqSimple />
-      <TimelineSection />
+      <Center style={{ marginTop: '50px' }}>
+        <Title order={2} style={{ marginBottom: 15 }}>
+          Timeline
+        </Title>
+      </Center>
+      <Center>
+        <TimelineSection />
+      </Center>
       <FooterLinks data={data} />
     </>
   );
