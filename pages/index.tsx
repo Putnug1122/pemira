@@ -4,7 +4,7 @@ import { HeaderMegaMenu } from '../components/Header/Header';
 import { FooterLinks } from '../components/Footer/Footer';
 import { HeroBullets } from '../components/Hero/Hero';
 import { FaqSimple } from '../components/Pilih/Pilih';
-import { TimelineSection } from '../components/Timeline/Timeline';
+import { TimelineSection } from '../components/TImeline/Timeline';
 
 const data = [
   {
