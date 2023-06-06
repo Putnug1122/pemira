@@ -1,4 +1,4 @@
-import { Center, SegmentedControl, Box, Space, Stack } from '@mantine/core';
+import { Center, SegmentedControl, Box, Space, Stack, Container } from '@mantine/core';
 import { Chrono } from 'react-chrono';
 import { IconCode, IconExternalLink, IconEye } from '@tabler/icons-react';
 import { useState } from 'react';
@@ -31,49 +31,51 @@ export function TimelineSection() {
   const [s, setS] = useState('DPM');
 
   return (
-    <Stack spacing="xl">
-      <SegmentedControl
-        fullWidth
-        size="md"
-        color="yellow"
-        defaultValue="DPM"
-        value={s}
-        onChange={(value) => setS(value)}
-        transitionTimingFunction="ease"
-        data={[
-          {
-            value: 'DPM',
-            label: (
-              <Center>
-                <IconEye size="1rem" />
-                <Box ml={10}>DPM</Box>
-              </Center>
-            ),
-          },
-          {
-            value: 'SEMA',
-            label: (
-              <Center>
-                <IconCode size="1rem" />
-                <Box ml={10}>SEMA</Box>
-              </Center>
-            ),
-          },
-          {
-            value: 'Keting',
-            label: (
-              <Center>
-                <IconExternalLink size="1rem" />
-                <Box ml={10}>Keting</Box>
-              </Center>
-            ),
-          },
-        ]}
-      />
+    <Container>
+      <Stack spacing="xl">
+        <SegmentedControl
+          fullWidth
+          size="md"
+          color="yellow"
+          defaultValue="DPM"
+          value={s}
+          onChange={(value) => setS(value)}
+          transitionTimingFunction="ease"
+          data={[
+            {
+              value: 'DPM',
+              label: (
+                <Center>
+                  <IconEye size="1rem" />
+                  <Box ml={10}>DPM</Box>
+                </Center>
+              ),
+            },
+            {
+              value: 'SEMA',
+              label: (
+                <Center>
+                  <IconCode size="1rem" />
+                  <Box ml={10}>SEMA</Box>
+                </Center>
+              ),
+            },
+            {
+              value: 'Keting',
+              label: (
+                <Center>
+                  <IconExternalLink size="1rem" />
+                  <Box ml={10}>Keting</Box>
+                </Center>
+              ),
+            },
+          ]}
+        />
 
-      {s === 'DPM' && <DPMTimeline />}
-      {s === 'SEMA' && <SemaTimeline />}
-      {s === 'Keting' && <KetingTimeline />}
-    </Stack>
+        {s === 'DPM' && <DPMTimeline />}
+        {s === 'SEMA' && <SemaTimeline />}
+        {s === 'Keting' && <KetingTimeline />}
+      </Stack>
+    </Container>
   );
 }

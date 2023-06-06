@@ -1,10 +1,14 @@
 import { HeaderMegaMenu } from '../components/Header/Header';
 import { FooterLinks } from '../components/Footer/Footer';
-import { HeroBullets } from '../components/Hero/Hero';
-import { FaqSimple } from '../components/Pilih/Pilih';
 import { TimelineSection } from '../components/TImeline/Timeline';
 import { Center, Title } from '@mantine/core';
 import { HeroTitle } from '../components/Hero/HeroTitile';
+import { AccordionPilih } from '../components/Pilih/AccordionPilih';
+import { Container } from '@mantine/core';
+import { Sambutan } from '../components/Sambutan/Sambutan';
+import { Chrono } from 'react-chrono';
+import { Jumbotron } from '../components/Jumbotron/Jumbotron';
+import { Waves } from '../components/Waves/Waves';
 
 const data = [
   {
@@ -72,14 +76,44 @@ const data = [
   },
 ];
 
+const items = [
+  {
+    title: 'January 2022',
+    cardTitle: 'Event 1',
+    cardSubtitle: 'Event 1 Subtitle',
+    cardDetailedText: 'This is the first event on the timeline.',
+  },
+  {
+    title: 'February 2022',
+    cardTitle: 'Event 2',
+    cardSubtitle: 'Event 2 Subtitle',
+    cardDetailedText: 'This is the second event on the timeline.',
+  },
+  {
+    title: 'March 2022',
+    cardTitle: 'Event 3',
+    cardSubtitle: 'Event 3 Subtitle',
+    cardDetailedText: 'This is the third event on the timeline.',
+  },
+];
+
 export default function HomePage() {
   return (
     <>
       <HeaderMegaMenu />
-      {/* <Welcome /> */}
-      <HeroTitle />
-      {/* <ColorSchemeToggle /> */}
-      <FaqSimple />
+      <Jumbotron />
+      <Waves height={40} width={150} />
+      <Container>
+        <Center>
+          <Title order={2} style={{ marginBottom: 15, marginTop: 50 }}>
+            Bisa Pilih Siapa Aja ?
+          </Title>
+        </Center>
+        <AccordionPilih />
+      </Container>
+      <Container>
+        <Sambutan />
+      </Container>
       <Center style={{ marginTop: '50px' }}>
         <Title order={2} style={{ marginBottom: 15 }}>
           Timeline

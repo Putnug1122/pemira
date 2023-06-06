@@ -24,7 +24,26 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
       </Head>
 
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-        <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
+        <MantineProvider
+          theme={{
+            colorScheme,
+            components: {
+              Container: {
+                defaultProps: {
+                  sizes: {
+                    xs: 540,
+                    sm: 720,
+                    md: 960,
+                    lg: 1140,
+                    xl: 1320,
+                  },
+                },
+              },
+            },
+          }}
+          withGlobalStyles
+          withNormalizeCSS
+        >
           <Component {...pageProps} />
           <Notifications />
         </MantineProvider>
