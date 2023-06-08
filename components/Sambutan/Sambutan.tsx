@@ -1,92 +1,83 @@
-import { createStyles, Text, Title, TextInput, Button, Image, rem } from '@mantine/core';
-import image from './image.svg';
-
-const useStyles = createStyles((theme) => ({
-  wrapper: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: `calc(${theme.spacing.xl} * 2)`,
-    borderRadius: theme.radius.md,
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
-    border: `${rem(1)} solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[3]
-    }`,
-
-    [theme.fn.smallerThan('sm')]: {
-      flexDirection: 'column-reverse',
-      padding: theme.spacing.xl,
-    },
-  },
-
-  image: {
-    maxWidth: '40%',
-
-    [theme.fn.smallerThan('sm')]: {
-      maxWidth: '100%',
-    },
-  },
-
-  body: {
-    paddingRight: `calc(${theme.spacing.xl} * 4)`,
-
-    [theme.fn.smallerThan('sm')]: {
-      paddingRight: 0,
-      marginTop: theme.spacing.xl,
-    },
-  },
-
-  title: {
-    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    lineHeight: 1,
-    marginBottom: theme.spacing.md,
-  },
-
-  controls: {
-    display: 'flex',
-    marginTop: theme.spacing.xl,
-  },
-
-  inputWrapper: {
-    width: '100%',
-    flex: '1',
-  },
-
-  input: {
-    borderTopRightRadius: 0,
-    borderBottomRightRadius: 0,
-    borderRight: 0,
-  },
-
-  control: {
-    borderTopLeftRadius: 0,
-    borderBottomLeftRadius: 0,
-  },
-}));
+import React from 'react';
+import { Button, Image, SimpleGrid, Text, useMantineColorScheme, Group, rem } from '@mantine/core';
+import { Prism } from '@mantine/prism';
+import { IconMoonStars, IconSun } from '@tabler/icons-react';
+import { PageSection } from '../PageSection/PageSection';
+import image from './dark-theme-image.png';
+import useStyles from './Sambutan.styles';
 
 export function Sambutan() {
-  const { classes } = useStyles();
-  return (
-    <div className={classes.wrapper}>
-      <div className={classes.body}>
-        <Title className={classes.title}>Wait a minute...</Title>
-        <Text fw={500} fz="lg" mb={5}>
-          Subscribe to our newsletter!
-        </Text>
-        <Text fz="sm" c="dimmed">
-          You will never miss important product updates, latest news and community QA sessions. Our
-          newsletter is once a week, every Sunday.
-        </Text>
+  const imageUrl: string = image.src;
+  const { classes, theme } = useStyles();
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 
-        <div className={classes.controls}>
-          <TextInput
-            placeholder="Your email"
-            classNames={{ input: classes.input, root: classes.inputWrapper }}
-          />
-          <Button className={classes.control}>Subscribe</Button>
+  const code = `
+import { MantineProvider } from '@mantine/core';
+
+function Demo() {
+  return (
+    <MantineProvider theme={{ colorScheme: '${colorScheme}' }}>
+      <App />
+    </MantineProvider>
+  );
+}
+`;
+
+  return (
+    <PageSection
+      title="Sambutan Ketua PAPERA 2022"
+      sx={{ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white }}
+    >
+      <SimpleGrid
+        cols={2}
+        mt={30}
+        spacing={60}
+        breakpoints={[{ maxWidth: 'sm', cols: 1, spacing: 30 }]}
+        pb={60}
+      >
+        <div>
+          <Image src={imageUrl} radius="md" className={classes.image} />
         </div>
-      </div>
-      <Image src={image.src} className={classes.image} />
-    </div>
+        <div>
+          <Text size="lg">
+            Add dark theme to your application with just a few lines of code – Mantine exports
+            global styles both for light and dark theme, all components support dark theme out of
+            the box.
+          </Text>
+
+          <Prism
+            language="tsx"
+            noCopy
+            mt="xl"
+            radius="md"
+            styles={{
+              code: {
+                backgroundColor:
+                  theme.colorScheme === 'dark' ? `${theme.colors.dark[7]} !important` : undefined,
+              },
+            }}
+          >
+            {code}
+          </Prism>
+
+          <Group position="center" mt="xl">
+            <Button
+              variant="default"
+              radius="md"
+              leftIcon={
+                colorScheme === 'dark' ? (
+                  <IconSun size={rem(16)} color={theme.colors.yellow[4]} />
+                ) : (
+                  <IconMoonStars size={rem(16)} color={theme.colors.blue[7]} />
+                )
+              }
+              onClick={() => toggleColorScheme()}
+            >
+              Toggle color scheme
+            </Button>
+          </Group>
+        </div>
+      </SimpleGrid>
+    </PageSection>
   );
 }
