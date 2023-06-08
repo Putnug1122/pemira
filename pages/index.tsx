@@ -6,6 +6,7 @@ import { Jumbotron } from '../components/Jumbotron/Jumbotron';
 import { Waves } from '../components/Waves/Waves';
 import { Components } from '../components/Pilih/Components';
 import { TimelineTab } from '../components/CustomizeWithProps/Components';
+import { Galeri } from '../components/Galeri/Galeri';
 
 const data = [
   {
@@ -86,6 +87,8 @@ export default function HomePage() {
         <Waves height={28} width={200} flip />
         <TimelineTab />
         <Waves height={36} width={110} alt />
+        <Galeri />
+        <Waves height={30} width={134} alt flip />
       </Box>
       <FooterLinks data={data} />
     </>
