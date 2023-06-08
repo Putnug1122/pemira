@@ -11,7 +11,7 @@ interface PageSectionProps extends DefaultProps {
 }
 
 export function PageSection({ title, description, children, white, ...others }: PageSectionProps) {
-  const { classes } = useStyles({ white });
+  const { classes } = useStyles({ white: true });
 
   return (
     <Box className={classes.wrapper} {...others}>
