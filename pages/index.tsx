@@ -10,7 +10,6 @@ import { Chrono } from 'react-chrono';
 import { Jumbotron } from '../components/Jumbotron/Jumbotron';
 import { Waves } from '../components/Waves/Waves';
 import { Components } from '../components/Pilih/Components';
-import { Footer } from '../components/Footer/Footer';
 
 const data = [
   {
@@ -109,6 +108,7 @@ export default function HomePage() {
         <Components />
         <Waves height={42} width={220} flip alt />
         <Sambutan />
+        <Waves height={28} width={200} flip />
         <Container>
           <Center>
             <Title order={2} style={{ marginBottom: 15, marginTop: 50 }}>
