@@ -311,7 +311,27 @@ export function HeaderMegaMenu() {
                 <IconMoonStars size={20} stroke={1.5} />
               )}
             </ActionIcon>
-            <Button variant="default">Log in</Button>
+            <Modal
+              opened={opened}
+              onClose={close}
+              // title="Authentication"
+              centered
+              overlayProps={{
+                color: theme.colorScheme === 'dark' ? theme.colors.dark[9] : theme.colors.gray[2],
+                opacity: 0.55,
+                blur: 3,
+              }}
+              withCloseButton={false}
+            >
+              {/* Modal content */}
+              <AuthenticationForm />
+            </Modal>
+
+            <Group position="center">
+              <Button onClick={open} variant="default">
+                Log in
+              </Button>
+            </Group>
             <Button>Sign up</Button>
           </Group>
         </ScrollArea>
