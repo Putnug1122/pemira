@@ -9,10 +9,6 @@ import {
 } from '@tabler/icons-react';
 import { Inputs } from './demos/Inputs';
 import { Dates } from './demos/Dates';
-import { Overlays } from './demos/Overlays';
-import { Content } from './demos/Content';
-import { RichText } from './demos/RichText';
-import { Carousel } from './demos/Carousel';
 import { DemoTabs } from '../DemoTabs/DemoTabs';
 
 const data = [
