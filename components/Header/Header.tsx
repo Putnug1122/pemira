@@ -136,6 +136,12 @@ export function HeaderMegaMenu() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const [opened, { open, close }] = useDisclosure(false);
 
+  // close drawer and show modal
+  const openModal = () => {
+    closeDrawer();
+    open();
+  };
+
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group noWrap align="flex-start">
@@ -249,11 +255,11 @@ export function HeaderMegaMenu() {
               <AuthenticationForm />
             </Modal>
 
-            <Group position="center">
-              <Button onClick={open} variant="default">
-                Log in
-              </Button>
-            </Group>
+            {/* <Group position="center"> */}
+            <Button onClick={open} variant="default">
+              Log in
+            </Button>
+            {/* </Group> */}
             {/* <Button variant="default">Log in</Button> */}
             <Button>Sign up</Button>
           </Group>
@@ -311,27 +317,11 @@ export function HeaderMegaMenu() {
                 <IconMoonStars size={20} stroke={1.5} />
               )}
             </ActionIcon>
-            <Modal
-              opened={opened}
-              onClose={close}
-              // title="Authentication"
-              centered
-              overlayProps={{
-                color: theme.colorScheme === 'dark' ? theme.colors.dark[9] : theme.colors.gray[2],
-                opacity: 0.55,
-                blur: 3,
-              }}
-              withCloseButton={false}
-            >
-              {/* Modal content */}
-              <AuthenticationForm />
-            </Modal>
 
-            <Group position="center">
-              <Button onClick={open} variant="default">
-                Log in
-              </Button>
-            </Group>
+            <Button onClick={openModal} variant="default">
+              Log in
+            </Button>
+
             <Button>Sign up</Button>
           </Group>
         </ScrollArea>
