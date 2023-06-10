@@ -1,26 +1,7 @@
-import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio } from '@mantine/core';
+import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio, Button, rem, Tooltip } from '@mantine/core';
 import { PageSection } from '../PageSection/PageSection';
+import { mockdata } from './Mockdata';
 
-const mockdata = [
-  {
-    title: 'Top 10 places to visit in Norway this summer',
-    image:
-      'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-    date: 'August 18, 2022',
-  },
-  {
-    title: 'Best forests to visit in North America',
-    image:
-      'https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-    date: 'August 27, 2022',
-  },
-  {
-    title: 'Hawaii beaches review: better than you think',
-    image:
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-    date: 'September 9, 2022',
-  },
-];
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -37,10 +18,13 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 600,
   },
 }));
-
 export function Berita() {
   const { classes } = useStyles();
-  const cards = mockdata.map((article) => (
+
+  // Ambil hanya 6 data pertama dari mockdata
+  const slicedMockdata = mockdata.slice(0, 6);
+
+  const cards = slicedMockdata.map((article) => (
     <Card key={article.title} p="md" radius="md" component="a" href="#" className={classes.card}>
       <AspectRatio ratio={1920 / 1080}>
         <Image src={article.image} />
@@ -54,6 +38,25 @@ export function Berita() {
     </Card>
   ));
 
+  function ButtonDirect() {
+    return (
+      <Button
+        variant="light"
+        radius="xl"
+        size="md"
+        style={{
+          marginTop: rem(25),
+          display: 'flex',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          justifyContent: 'center',
+        }}
+      >
+        Lebih Banyak Berita
+      </Button>
+    );
+  }
+
   return (
     <PageSection
       title="Berita Pemira"
@@ -66,6 +69,7 @@ export function Berita() {
         <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
           {cards}
         </SimpleGrid>
+        <ButtonDirect />
       </Container>
     </PageSection>
   );
