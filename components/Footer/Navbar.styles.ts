@@ -1,6 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { createStyles, MantineTheme, rem, em } from '@mantine/core';
-import { HEADER_HEIGHT } from '../Header/HeaderDesktop.styles';
+import { HEADER_HEIGHT } from './HeaderDesktop.styles';
 
 export const NAVBAR_WIDTH = 260;
 export const NAVBAR_BREAKPOINT = 760;

@@ -1,6 +1,6 @@
 import { createStyles, rem } from '@mantine/core';
 // eslint-disable-next-line import/no-cycle
-import { NAVBAR_BREAKPOINT } from '../Navbar/Navbar.styles';
+import { NAVBAR_BREAKPOINT } from './Navbar.styles';
 
 export const HEADER_HEIGHT = 60;
 
