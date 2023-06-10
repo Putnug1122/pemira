@@ -8,6 +8,7 @@ import { Components } from '../components/Pilih/Components';
 import { TimelineTab } from '../components/CustomizeWithProps/Components';
 import { Galeri } from '../components/Galeri/Galeri';
 import { Berita } from '../components/Berita/Berita';
+import { Footer } from '../components/Footer/Footer';
 
 const data = [
   {
@@ -92,7 +93,8 @@ export default function HomePage() {
         <Waves height={30} width={134} flip />
         <Berita />
       </Box>
-      <FooterLinks data={data} />
+      {/* <FooterLinks data={data} /> */}
+      <Footer />
     </>
   );
 }
