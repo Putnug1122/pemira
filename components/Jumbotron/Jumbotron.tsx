@@ -30,8 +30,14 @@ export function Jumbotron() {
   return (
     <div className={classes.jumbotron}>
       <Container size={1100} className={classes.inner}>
-        <Hero />
-
+        {/* <Hero /> */}
+        <h1 className={classes.title}>
+          A{' '}
+          <Text component="span" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }} inherit>
+            fully featured
+          </Text>{' '}
+          React components library
+        </h1>
         <Text className={classes.description}>
           Build fully functional accessible web applications faster than ever – Mantine includes
           more than 100 customizable components and 50 hooks to cover you in any situation
