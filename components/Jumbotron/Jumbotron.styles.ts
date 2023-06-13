@@ -12,7 +12,7 @@ export default createStyles((theme) => ({
 
   inner: {
     position: 'relative',
-    paddingTop: rem(200),
+    paddingTop: rem(170),
     paddingBottom: rem(180),
 
     [BREAKPOINT]: {
@@ -120,7 +120,7 @@ export default createStyles((theme) => ({
 
     [theme.fn.smallerThan('sm')]: {
       fontSize: rem(31),
-      lineHeight: 1.2,
+      // lineHeight: 1.2,
     },
   },
 }));
