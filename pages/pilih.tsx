@@ -3,25 +3,28 @@ import {
   AppShell,
   Navbar,
   Header,
-  Footer,
-  Aside,
-  Text,
   MediaQuery,
   Burger,
   useMantineTheme,
   Group,
   useMantineColorScheme,
   ActionIcon,
+  Tabs,
 } from '@mantine/core';
 import { MainLinks } from '../components/Sidebar/_mainLinks';
 import { User } from '../components/Sidebar/_user';
 import { Logo } from '../components/Sidebar/_logo';
-import { IconMoonStars, IconSun } from '@tabler/icons-react';
+import { IconMoonStars, IconPhoto, IconSettings, IconSun } from '@tabler/icons-react';
 
 export default function AppShellDemo() {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const tabs = [
+    { label: 'Gallery', icon: <IconPhoto size="0.8rem" />, content: 'Gallery tab content' },
+    { label: 'Settings', icon: <IconSettings size="0.8rem" />, content: 'Settings tab content' },
+  ];
+
   return (
     <>
       <AppShell
@@ -43,18 +46,6 @@ export default function AppShellDemo() {
             </Navbar.Section>
           </Navbar>
         }
-        // aside={
-        //   <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
-        //     <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
-        //       <Text>Application sidebar</Text>
-        //     </Aside>
-        //   </MediaQuery>
-        // }
-        // footer={
-        //   <Footer height={60} p="md">
-        //     Application footer
-        //   </Footer>
-        // }
         header={
           <Header height={60}>
             <Group sx={{ height: '100%' }} px={20} position="apart">
@@ -75,7 +66,24 @@ export default function AppShellDemo() {
           </Header>
         }
       >
-        <Text>Resize app to see responsive navbar in action</Text>
+        <Tabs color="red" variant="outline" defaultValue="gallery">
+          <Tabs.List grow>
+            <Tabs.Tab value="gallery" icon={<IconPhoto size="0.8rem" />}>
+              Gallery
+            </Tabs.Tab>
+            <Tabs.Tab value="settings" icon={<IconSettings size="0.8rem" />}>
+              Settings
+            </Tabs.Tab>
+          </Tabs.List>
+
+          <Tabs.Panel value="gallery" pt="xs">
+            Gallery tab content
+          </Tabs.Panel>
+
+          <Tabs.Panel value="settings" pt="xs">
+            Settings tab content
+          </Tabs.Panel>
+        </Tabs>
       </AppShell>
     </>
   );
