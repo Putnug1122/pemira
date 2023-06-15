@@ -1,151 +1,82 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
-  Group,
-  Box,
-  Collapse,
-  ThemeIcon,
+  AppShell,
+  Navbar,
+  Header,
+  Footer,
+  Aside,
   Text,
-  UnstyledButton,
-  createStyles,
-  rem,
-  Grid,
-  Tabs,
+  MediaQuery,
+  Burger,
+  useMantineTheme,
+  Group,
+  useMantineColorScheme,
+  ActionIcon,
 } from '@mantine/core';
-import {
-  IconCalendarStats,
-  IconChevronLeft,
-  IconChevronRight,
-  IconMessageCircle,
-  IconPhoto,
-  IconSettings,
-} from '@tabler/icons-react';
+import { MainLinks } from '../components/Sidebar/_mainLinks';
+import { User } from '../components/Sidebar/_user';
+import { Logo } from '../components/Sidebar/_logo';
+import { IconMoonStars, IconSun } from '@tabler/icons-react';
 
-const useStyles = createStyles((theme) => ({
-  control: {
-    fontWeight: 500,
-    display: 'block',
-    width: '100%',
-    padding: `${theme.spacing.xs} ${theme.spacing.md}`,
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
-    fontSize: theme.fontSizes.sm,
-
-    '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
-      color: theme.colorScheme === 'dark' ? theme.white : theme.black,
-    },
-  },
-
-  link: {
-    fontWeight: 500,
-    display: 'block',
-    textDecoration: 'none',
-    padding: `${theme.spacing.xs} ${theme.spacing.md}`,
-    paddingLeft: rem(31),
-    marginLeft: rem(30),
-    fontSize: theme.fontSizes.sm,
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
-    borderLeft: `${rem(1)} solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
-    }`,
-
-    '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
-      color: theme.colorScheme === 'dark' ? theme.white : theme.black,
-    },
-  },
-
-  chevron: {
-    transition: 'transform 200ms ease',
-  },
-}));
-
-interface LinksGroupProps {
-  icon: React.FC<any>;
-  label: string;
-  initiallyOpened?: boolean;
-  links?: { label: string; link: string }[];
-}
-
-export function LinksGroup({ icon: Icon, label, initiallyOpened, links }: LinksGroupProps) {
-  const { classes, theme } = useStyles();
-  const hasLinks = Array.isArray(links);
-  const [opened, setOpened] = useState(initiallyOpened || false);
-  const ChevronIcon = theme.dir === 'ltr' ? IconChevronRight : IconChevronLeft;
-  const items = (hasLinks ? links : []).map((link) => (
-    <Text<'a'>
-      component="a"
-      className={classes.link}
-      href={link.link}
-      key={link.label}
-      onClick={(event) => event.preventDefault()}
-    >
-      {link.label}
-    </Text>
-  ));
-
+export default function AppShellDemo() {
+  const theme = useMantineTheme();
+  const [opened, setOpened] = useState(false);
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   return (
     <>
-      <UnstyledButton onClick={() => setOpened((o) => !o)} className={classes.control}>
-        <Group position="apart" spacing={0}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <ThemeIcon variant="light" size={30}>
-              <Icon size="1.1rem" />
-            </ThemeIcon>
-            <Box ml="md">{label}</Box>
-          </Box>
-          {hasLinks && (
-            <ChevronIcon
-              className={classes.chevron}
-              size="1rem"
-              stroke={1.5}
-              style={{
-                transform: opened ? `rotate(${theme.dir === 'rtl' ? -90 : 90}deg)` : 'none',
-              }}
-            />
-          )}
-        </Group>
-      </UnstyledButton>
-      {hasLinks ? <Collapse in={opened}>{items}</Collapse> : null}
+      <AppShell
+        styles={{
+          main: {
+            background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
+          },
+        }}
+        navbarOffsetBreakpoint="sm"
+        asideOffsetBreakpoint="sm"
+        fixed
+        navbar={
+          <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
+            <Navbar.Section grow mt="xs">
+              <MainLinks />
+            </Navbar.Section>
+            <Navbar.Section>
+              <User />
+            </Navbar.Section>
+          </Navbar>
+        }
+        // aside={
+        //   <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
+        //     <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
+        //       <Text>Application sidebar</Text>
+        //     </Aside>
+        //   </MediaQuery>
+        // }
+        // footer={
+        //   <Footer height={60} p="md">
+        //     Application footer
+        //   </Footer>
+        // }
+        header={
+          <Header height={60}>
+            <Group sx={{ height: '100%' }} px={20} position="apart">
+              <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+                <Burger
+                  opened={opened}
+                  onClick={() => setOpened((o) => !o)}
+                  size="sm"
+                  color={theme.colors.gray[6]}
+                  mr="xl"
+                />
+              </MediaQuery>
+              <Logo colorScheme={colorScheme} />
+              <ActionIcon variant="default" onClick={() => toggleColorScheme()} size={30}>
+                {colorScheme === 'dark' ? <IconSun size="1rem" /> : <IconMoonStars size="1rem" />}
+              </ActionIcon>
+            </Group>
+          </Header>
+        }
+      >
+        <Text>Resize app to see responsive navbar in action</Text>
+      </AppShell>
     </>
-  );
-}
-
-const mockdata = {
-  label: 'Releases',
-  icon: IconCalendarStats,
-  links: [
-    { label: 'Upcoming releases', link: '/' },
-    { label: 'Previous releases', link: '/' },
-    { label: 'Releases schedule', link: '/' },
-  ],
-};
-
-export default function NavbarLinksGroup() {
-  return (
-    <Grid gutter="lg">
-      <Grid.Col span={2}>
-        <LinksGroup {...mockdata} />
-      </Grid.Col>
-      <Grid.Col span={10}>
-        <Tabs variant="outline" radius="md" defaultValue="gallery">
-          <Tabs.List grow>
-            <Tabs.Tab value="gallery" icon={<IconPhoto size="0.8rem" />}>
-              Gallery
-            </Tabs.Tab>
-            <Tabs.Tab value="messages" icon={<IconMessageCircle size="0.8rem" />}>
-              Messages
-            </Tabs.Tab>
-          </Tabs.List>
-
-          <Tabs.Panel value="gallery" pt="xs">
-            Gallery tab content
-          </Tabs.Panel>
-
-          <Tabs.Panel value="messages" pt="xs">
-            Messages tab content
-          </Tabs.Panel>
-        </Tabs>
-      </Grid.Col>
-    </Grid>
   );
 }

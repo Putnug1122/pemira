@@ -32,7 +32,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
           withGlobalStyles
           withNormalizeCSS
         >
-          <HeaderMegaMenu />
+          {/* <HeaderMegaMenu /> */}
           <Component {...pageProps} />
           <Notifications />
         </MantineProvider>

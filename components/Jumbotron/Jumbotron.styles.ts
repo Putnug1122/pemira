@@ -112,8 +112,9 @@ export default createStyles((theme) => ({
   title: {
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontSize: rem(99),
-    fontWeight: 900,
+    fontWeight: 800,
     lineHeight: 1.1,
+    letterSpacing: rem(-1),
     margin: 0,
     padding: 0,
     color: theme.colorScheme === 'dark' ? theme.white : theme.black,

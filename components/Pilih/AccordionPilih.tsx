@@ -6,7 +6,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   item: {
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
     border: `${rem(1)} solid transparent`,
     position: 'relative',
     zIndex: 0,

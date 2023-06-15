@@ -1,6 +1,15 @@
 import React from 'react';
 // import { Link } from 'gatsby';
-import { Container, Group, Button, Text, useMantineTheme, SimpleGrid, rem } from '@mantine/core';
+import {
+  Container,
+  Group,
+  Button,
+  Text,
+  useMantineTheme,
+  SimpleGrid,
+  rem,
+  Title,
+} from '@mantine/core';
 import { GithubIcon } from '@mantine/ds';
 import { Hero } from './Hero';
 import { FEATURES_DATA } from './features';
@@ -31,13 +40,13 @@ export function Jumbotron() {
     <div className={classes.jumbotron}>
       <Container size={1100} className={classes.inner}>
         {/* <Hero /> */}
-        <h1 className={classes.title}>
+        <Title className={classes.title}>
           A{' '}
           <Text component="span" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }} inherit>
             fully featured
           </Text>{' '}
           React components library
-        </h1>
+        </Title>
         <Text className={classes.description}>
           Build fully functional accessible web applications faster than ever – Mantine includes
           more than 100 customizable components and 50 hooks to cover you in any situation
