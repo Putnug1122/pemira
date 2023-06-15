@@ -80,7 +80,7 @@ export default function HomePage() {
   return (
     <>
       <Box sx={(theme) => ({ position: 'relative', zIndex: 1, boxShadow: theme.shadows.sm })}>
-        {/* <HeaderMegaMenu /> */}
+        <HeaderMegaMenu />
         <Jumbotron />
         <Waves height={40} width={150} />
         <Components />
