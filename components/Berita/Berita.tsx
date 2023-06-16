@@ -1,6 +1,7 @@
-import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio, Button, rem, Tooltip } from '@mantine/core';
+import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio, Button, rem } from '@mantine/core';
 import { PageSection } from '../PageSection/PageSection';
 import { mockdata } from './Mockdata';
+import Link from 'next/link';
 
 
 const useStyles = createStyles((theme) => ({
@@ -18,9 +19,10 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 600,
   },
 }));
+
 export function Berita() {
   const { classes } = useStyles();
-
+  
   // Ambil hanya 6 data pertama dari mockdata
   const slicedMockdata = mockdata.slice(0, 6);
 
@@ -35,25 +37,31 @@ export function Berita() {
       <Text className={classes.title} mt={5}>
         {article.title}
       </Text>
+      <Text mt={5} size="sm" align='justify'>
+        {article.excerpt}
+      </Text>
     </Card>
   ));
 
   function ButtonDirect() {
     return (
-      <Button
-        variant="light"
-        radius="xl"
-        size="md"
-        style={{
-          marginTop: rem(25),
-          display: 'flex',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          justifyContent: 'center',
-        }}
-      >
-        Lebih Banyak Berita
-      </Button>
+      <Link href="/berita">
+        <Button
+          variant="light"
+          radius="xl"
+          size="md"
+          style={{
+            marginTop: rem(25),
+            display: 'flex',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            justifyContent: 'center',
+            textDecoration: 'none',
+          }}
+        >
+          Lebih Banyak Berita
+        </Button>
+      </Link>
     );
   }
 
