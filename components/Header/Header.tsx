@@ -261,7 +261,6 @@ export function HeaderMegaMenu() {
             </Button>
             {/* </Group> */}
             {/* <Button variant="default">Log in</Button> */}
-            <Button>Sign up</Button>
           </Group>
 
           <Burger opened={drawerOpened} onClick={toggleDrawer} className={classes.hiddenDesktop} />
@@ -276,6 +275,7 @@ export function HeaderMegaMenu() {
         title="Navigation"
         className={classes.hiddenDesktop}
         zIndex={1000000}
+        transitionProps={{ transition: 'pop-top-left', duration: 150, timingFunction: 'linear' }}
       >
         <ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md">
           <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
@@ -321,8 +321,6 @@ export function HeaderMegaMenu() {
             <Button onClick={openModal} variant="default">
               Log in
             </Button>
-
-            <Button>Sign up</Button>
           </Group>
         </ScrollArea>
       </Drawer>

@@ -11,9 +11,11 @@ import {
   Title,
 } from '@mantine/core';
 import { GithubIcon } from '@mantine/ds';
-import { Hero } from './Hero';
 import { FEATURES_DATA } from './features';
 import useStyles from './Jumbotron.styles';
+import localFont from 'next/font/local';
+
+const myFont = localFont({ src: '../fonts/Fontspring-DEMO-greycliffcf-heavy.otf' });
 
 export function Jumbotron() {
   const { classes, cx } = useStyles();
@@ -40,7 +42,7 @@ export function Jumbotron() {
     <div className={classes.jumbotron}>
       <Container size={1100} className={classes.inner}>
         {/* <Hero /> */}
-        <Title className={classes.title}>
+        <Title className={[myFont.className, classes.title].join(' ')}>
           A{' '}
           <Text component="span" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }} inherit>
             fully featured

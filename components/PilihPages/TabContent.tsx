@@ -1,5 +1,7 @@
-import { Group, MediaQuery, SegmentedControl, Tabs, Title } from '@mantine/core';
+import { MediaQuery, SegmentedControl, Tabs } from '@mantine/core';
 import { IconInfoCircle, IconSelect } from '@tabler/icons-react';
+import { useState } from 'react';
+import Info from './Info';
 
 export default function TabContent() {
   return (
@@ -14,30 +16,7 @@ export default function TabContent() {
       </Tabs.List>
 
       <Tabs.Panel value="gallery" pt="xs">
-        <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
-          <SegmentedControl
-            size="md"
-            color="yellow"
-            data={[
-              { label: 'No. Urut', value: 'no_urut', disabled: true },
-              { label: '1', value: '1' },
-              { label: '2', value: '2' },
-              { label: '3', value: '3' },
-            ]}
-          />
-        </MediaQuery>
-        <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
-          <SegmentedControl
-            size="sm"
-            color="yellow"
-            data={[
-              { label: 'No. Urut', value: 'no_urut', disabled: true },
-              { label: '1', value: '1' },
-              { label: '2', value: '2' },
-              { label: '3', value: '3' },
-            ]}
-          />
-        </MediaQuery>
+        <Info />
       </Tabs.Panel>
 
       <Tabs.Panel value="settings" pt="xs">
