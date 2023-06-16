@@ -4,7 +4,7 @@ import NoUrutControl from './NoUrutControl';
 export default function Info() {
   return (
     <>
-      <NoUrutControl size="md" />
+      <NoUrutControl />
     </>
   );
 }
