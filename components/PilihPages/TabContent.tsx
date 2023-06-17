@@ -2,6 +2,7 @@ import { MediaQuery, SegmentedControl, Tabs } from '@mantine/core';
 import { IconInfoCircle, IconSelect } from '@tabler/icons-react';
 import { useState } from 'react';
 import Info from './Info';
+import ImageCheckboxes from './Vote';
 
 export default function TabContent() {
   return (
@@ -20,7 +21,7 @@ export default function TabContent() {
       </Tabs.Panel>
 
       <Tabs.Panel value="settings" pt="xs">
-        Settings tab content
+        <ImageCheckboxes />
       </Tabs.Panel>
     </Tabs>
   );
