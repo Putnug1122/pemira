@@ -9,6 +9,7 @@ import { TimelineTab } from '../components/CustomizeWithProps/Components';
 import { Galeri } from '../components/Galeri/Galeri';
 import { Berita } from '../components/Berita/Berita';
 import { Footer } from '../components/Footer/Footer';
+import AffixComponent from '../components/Utils/Afix';
 
 const data = [
   {
@@ -80,6 +81,7 @@ export default function HomePage() {
   return (
     <>
       <Box sx={(theme) => ({ position: 'relative', zIndex: 1, boxShadow: theme.shadows.sm })}>
+        <AffixComponent />
         <HeaderMegaMenu />
         <Jumbotron />
         <Waves height={40} width={150} />
