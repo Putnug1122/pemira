@@ -32,7 +32,7 @@ export function BeritaLengkap() {
   const endIndex = startIndex + itemsPerPage;
   const displayedCards = mockdata.slice(startIndex, endIndex);
 
-  const cards = displayedCards.map((article) => (
+  const cards = displayedCards.sort((a, b) => b.id - a.id).map((article) => (
     <Link key={article.title} href={`/detail?judul=${article.title}`} className={classes.card} style={{ width: 'auto', height: 'auto' }}>
       <Card p="md" radius="md" className={classes.card} style={{ width: 'auto', height: 'auto' }}>
         <AspectRatio ratio={1920 / 1080}>

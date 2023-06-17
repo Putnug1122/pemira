@@ -24,7 +24,7 @@ export function Berita() {
   const { classes } = useStyles();
   
   // Ambil hanya 6 data pertama dari mockdata
-  const slicedMockdata = mockdata.slice(0, 6);
+  const slicedMockdata = mockdata.sort((a, b) => b.id - a.id).slice(0, 6);
 
   const cards = slicedMockdata.map((article) => (
     <Link key={article.title} href={`/detail?judul=${article.title}`} className={classes.card} style={{ width: 'auto', height: 'auto' }}>
