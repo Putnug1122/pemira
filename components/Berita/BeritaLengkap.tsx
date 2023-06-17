@@ -33,7 +33,7 @@ export function BeritaLengkap() {
   const displayedCards = mockdata.slice(startIndex, endIndex);
 
   const cards = displayedCards.map((article) => (
-    <Link key={article.title} href={`/detailberita?beritaId=${article.id}`} className={classes.card} style={{ width: 'auto', height: 'auto' }}>
+    <Link key={article.title} href={`/detail?judul=${article.title}`} className={classes.card} style={{ width: 'auto', height: 'auto' }}>
       <Card p="md" radius="md" className={classes.card} style={{ width: 'auto', height: 'auto' }}>
         <AspectRatio ratio={1920 / 1080}>
           <Image src={article.image} />

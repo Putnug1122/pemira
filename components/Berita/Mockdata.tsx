@@ -5,7 +5,7 @@ export const mockdata = [
         date: '13 Oktober 2020',
         title: 'Pasangan Calon Ketua Wakil Ketua SEMA Polstat STIS',
         excerpt: 'Rabu (29/7), telah dibuka pendaftaran Calon Ketua dan Wakil Ketua Senat Mahasiswa Politeknik Statistika STIS. Calon Ketua Senat Mahasiswa merupakan...',
-        description: 'ini adalah paragraf 1.\n\n ini adalah paragraf 2.',
+        description: '',
         tags: 'SEMA',
         author: 'HPD',
     },
