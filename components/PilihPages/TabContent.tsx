@@ -1,6 +1,5 @@
-import { MediaQuery, SegmentedControl, Tabs } from '@mantine/core';
+import { Tabs } from '@mantine/core';
 import { IconInfoCircle, IconSelect } from '@tabler/icons-react';
-import { useState } from 'react';
 import Info from './Info';
 import ImageCheckboxes from './Vote';
 

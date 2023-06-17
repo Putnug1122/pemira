@@ -18,7 +18,7 @@ const myFont = localFonts({ src: '../fonts/Fontspring-DEMO-greycliffcf-heavy.otf
 const useStyles = createStyles((theme) => ({}));
 
 export default function ImageCheckboxes() {
-  const [value, setValue] = useState('react');
+  const [value, setValue] = useState('');
   const { classes, theme } = useStyles();
 
   return (
@@ -94,7 +94,7 @@ export default function ImageCheckboxes() {
                     </Card.Section>
                   </Card>
                 }
-                value="candidate1"
+                value="candidate2"
               />
               <Radio
                 label={
@@ -112,7 +112,7 @@ export default function ImageCheckboxes() {
                     </Card.Section>
                   </Card>
                 }
-                value="candidate1"
+                value="candidate3"
               />
             </SimpleGrid>
           </Container>
