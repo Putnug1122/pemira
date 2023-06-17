@@ -2,21 +2,25 @@ import {
   Card,
   Image,
   Text,
-  Badge,
   Group,
   SimpleGrid,
   Radio,
   Container,
   MediaQuery,
   Title,
+  createStyles,
 } from '@mantine/core';
 import { useState } from 'react';
 import localFonts from 'next/font/local';
 
 const myFont = localFonts({ src: '../fonts/Fontspring-DEMO-greycliffcf-heavy.otf' });
 
+const useStyles = createStyles((theme) => ({}));
+
 export default function ImageCheckboxes() {
   const [value, setValue] = useState('react');
+  const { classes, theme } = useStyles();
+
   return (
     <>
       <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
@@ -55,66 +59,61 @@ export default function ImageCheckboxes() {
                 { maxWidth: 'sm', cols: 1, spacing: 'sm' },
               ]}
             >
-              <Card shadow="sm" padding="lg" radius="md" withBorder>
-                <Card.Section>
-                  <Image
-                    src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
-                    height={160}
-                    alt="Norway"
-                  />
-                </Card.Section>
-                <Group position="apart" mt="md" mb="xs">
-                  <Text weight={500}>Norway Fjord Adventures</Text>
-                  <Badge color="pink" variant="light">
-                    On Sale
-                  </Badge>
-                </Group>
-                <Text size="sm" color="dimmed">
-                  With Fjord Tours you can explore more of the magical fjord landscapes with tours
-                  and activities on and around the fjords of Norway
-                </Text>
-                <Radio value="react" label="React" />
-              </Card>
-              <Card shadow="sm" padding="lg" radius="md" withBorder>
-                <Card.Section>
-                  <Image
-                    src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
-                    height={160}
-                    alt="Norway"
-                  />
-                </Card.Section>
-                <Group position="apart" mt="md" mb="xs">
-                  <Text weight={500}>Norway Fjord Adventures</Text>
-                  <Badge color="pink" variant="light">
-                    On Sale
-                  </Badge>
-                </Group>
-                <Text size="sm" color="dimmed">
-                  With Fjord Tours you can explore more of the magical fjord landscapes with tours
-                  and activities on and around the fjords of Norway
-                </Text>
-                <Radio value="svelte" label="Svelte" />
-              </Card>
-              <Card shadow="sm" padding="lg" radius="md" withBorder>
-                <Card.Section>
-                  <Image
-                    src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
-                    height={160}
-                    alt="Norway"
-                  />
-                </Card.Section>
-                <Group position="apart" mt="md" mb="xs">
-                  <Text weight={500}>Norway Fjord Adventures</Text>
-                  <Badge color="pink" variant="light">
-                    On Sale
-                  </Badge>
-                </Group>
-                <Text size="sm" color="dimmed">
-                  With Fjord Tours you can explore more of the magical fjord landscapes with tours
-                  and activities on and around the fjords of Norway
-                </Text>
-                <Radio value="vue" label="Vue" />
-              </Card>
+              <Radio
+                classNames={classes}
+                label={
+                  <Card withBorder shadow="sm" radius="md">
+                    <Card.Section mt="sm">
+                      <Image
+                        src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        height="100%"
+                      />
+                    </Card.Section>
+                    <Card.Section withBorder inheritPadding py="xs">
+                      <Group position="apart">
+                        <Text weight={500}>Review pictures</Text>
+                      </Group>
+                    </Card.Section>
+                  </Card>
+                }
+                value="candidate1"
+              />
+              <Radio
+                label={
+                  <Card withBorder shadow="sm" radius="md">
+                    <Card.Section mt="sm">
+                      <Image
+                        src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        height="100%"
+                      />
+                    </Card.Section>
+                    <Card.Section withBorder inheritPadding py="xs">
+                      <Group position="apart">
+                        <Text weight={500}>Review pictures</Text>
+                      </Group>
+                    </Card.Section>
+                  </Card>
+                }
+                value="candidate1"
+              />
+              <Radio
+                label={
+                  <Card withBorder shadow="sm" radius="md">
+                    <Card.Section mt="sm">
+                      <Image
+                        src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        height="100%"
+                      />
+                    </Card.Section>
+                    <Card.Section withBorder inheritPadding py="xs">
+                      <Group position="apart">
+                        <Text weight={500}>Review pictures</Text>
+                      </Group>
+                    </Card.Section>
+                  </Card>
+                }
+                value="candidate1"
+              />
             </SimpleGrid>
           </Container>
         </Group>
