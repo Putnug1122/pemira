@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Text, Group } from '@mantine/core';
+import { Container, Text, Group, Image, useMantineTheme } from '@mantine/core';
 import { TwitterButton, DiscordButton } from '@mantine/ds';
 import { Logo } from '../Logo/Logo';
 import { LinksGroup } from './LinksGroup/LinksGroup';
@@ -15,6 +15,7 @@ export function Footer({ withNavbar }: FooterProps) {
   const groups = FOOTER_LINKS_DATA.map((group) => (
     <LinksGroup data={group.data} title={group.title} key={group.title} />
   ));
+  const theme = useMantineTheme();
 
   return (
     <>
@@ -23,7 +24,13 @@ export function Footer({ withNavbar }: FooterProps) {
         <Container size={1100}>
           <div className={classes.inner}>
             <div className={classes.logoSection}>
-              <Logo />
+              {/* <Logo /> */}
+              {theme.colorScheme === 'dark' ? (
+                <Image src="/3.png" width="114.13px" height="30px" />
+              ) : (
+                <Image src="/2.png" width="114.13px" height="30px" />
+              )}
+
               <Text className={classes.description} size="sm">
                 Build fully functional accessible web applications faster than ever
               </Text>

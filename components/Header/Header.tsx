@@ -20,6 +20,7 @@ import {
   useMantineColorScheme,
   ActionIcon,
   Modal,
+  Image,
 } from '@mantine/core';
 import { MantineLogo } from '@mantine/ds';
 import { useDisclosure } from '@mantine/hooks';
@@ -164,7 +165,12 @@ export function HeaderMegaMenu() {
     <Box pb={0}>
       <Header height={60} px="md">
         <Group position="apart" sx={{ height: '100%' }}>
-          <MantineLogo size={30} />
+          {/* <MantineLogo size={30} /> */}
+          {theme.colorScheme === 'dark' ? (
+            <Image src="/3.png" width="114.13px" height="30px" />
+          ) : (
+            <Image src="/2.png" width="114.13px" height="30px" />
+          )}
 
           <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
             <a href="#" className={classes.link}>

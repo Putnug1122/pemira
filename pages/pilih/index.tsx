@@ -9,9 +9,9 @@ import {
   Navbar,
   useMantineColorScheme,
   useMantineTheme,
+  Image,
 } from '@mantine/core';
-import { IconMoon, IconPhoto, IconSettings, IconSun } from '@tabler/icons-react';
-import { motion } from 'framer-motion';
+import { IconMoon, IconSun } from '@tabler/icons-react';
 import TabContent from '../../components/PilihPages/TabContent';
 import { Logo } from '../../components/Sidebar/_logo';
 import { MainLinks } from '../../components/Sidebar/_mainLinks';
@@ -26,14 +26,23 @@ export default function AppShellDemo() {
       <AppShell
         styles={{
           main: {
-            background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
+            background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.white,
           },
         }}
         navbarOffsetBreakpoint="sm"
         asideOffsetBreakpoint="sm"
         fixed
         navbar={
-          <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
+          <Navbar
+            p="md"
+            hiddenBreakpoint="sm"
+            hidden={!opened}
+            width={{ sm: 200, lg: 300 }}
+            style={{
+              background:
+                theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
+            }}
+          >
             <Navbar.Section grow mt="xs">
               <MainLinks />
             </Navbar.Section>
@@ -43,7 +52,13 @@ export default function AppShellDemo() {
           </Navbar>
         }
         header={
-          <Header height={60}>
+          <Header
+            height={60}
+            style={{
+              background:
+                theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
+            }}
+          >
             <Group sx={{ height: '100%' }} px={20} position="apart">
               <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
                 <Burger
@@ -53,7 +68,13 @@ export default function AppShellDemo() {
                   color={theme.colors.gray[6]}
                 />
               </MediaQuery>
-              <Logo colorScheme={colorScheme} />
+              {/* <Logo colorScheme={colorScheme} /> */}
+              {theme.colorScheme === 'dark' ? (
+                <Image src="/3.png" width="100px" height="26.16px" />
+              ) : (
+                <Image src="/2.png" width="100px" height="26.16px" />
+              )}
+
               <ActionIcon
                 variant="default"
                 onClick={() => toggleColorScheme()}
