@@ -12,7 +12,7 @@ export default createStyles((theme) => ({
 
   inner: {
     position: 'relative',
-    paddingTop: rem(200),
+    paddingTop: rem(170),
     paddingBottom: rem(180),
 
     [BREAKPOINT]: {
@@ -106,6 +106,22 @@ export default createStyles((theme) => ({
 
     '& svg': {
       display: 'block',
+    },
+  },
+
+  title: {
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontSize: rem(100),
+    fontWeight: 900,
+    lineHeight: 0.9,
+    letterSpacing: rem(1),
+    margin: 0,
+    padding: 0,
+    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+
+    [theme.fn.smallerThan('sm')]: {
+      fontSize: rem(31),
+      // lineHeight: 1.2,
     },
   },
 }));

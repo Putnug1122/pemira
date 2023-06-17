@@ -20,6 +20,7 @@ import {
   useMantineColorScheme,
   ActionIcon,
   Modal,
+  Image,
 } from '@mantine/core';
 import { MantineLogo } from '@mantine/ds';
 import { useDisclosure } from '@mantine/hooks';
@@ -136,6 +137,12 @@ export function HeaderMegaMenu() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const [opened, { open, close }] = useDisclosure(false);
 
+  // close drawer and show modal
+  const openModal = () => {
+    closeDrawer();
+    open();
+  };
+
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group noWrap align="flex-start">
@@ -158,7 +165,12 @@ export function HeaderMegaMenu() {
     <Box pb={0}>
       <Header height={60} px="md">
         <Group position="apart" sx={{ height: '100%' }}>
-          <MantineLogo size={30} />
+          {/* <MantineLogo size={30} /> */}
+          {theme.colorScheme === 'dark' ? (
+            <Image src="/3.png" width="114.13px" height="30px" />
+          ) : (
+            <Image src="/2.png" width="114.13px" height="30px" />
+          )}
 
           <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
             <a href="#" className={classes.link}>
@@ -249,13 +261,12 @@ export function HeaderMegaMenu() {
               <AuthenticationForm />
             </Modal>
 
-            <Group position="center">
-              <Button onClick={open} variant="default">
-                Log in
-              </Button>
-            </Group>
+            {/* <Group position="center"> */}
+            <Button onClick={open} variant="default">
+              Log in
+            </Button>
+            {/* </Group> */}
             {/* <Button variant="default">Log in</Button> */}
-            <Button>Sign up</Button>
           </Group>
 
           <Burger opened={drawerOpened} onClick={toggleDrawer} className={classes.hiddenDesktop} />
@@ -270,6 +281,7 @@ export function HeaderMegaMenu() {
         title="Navigation"
         className={classes.hiddenDesktop}
         zIndex={1000000}
+        transitionProps={{ transition: 'pop-top-left', duration: 150, timingFunction: 'linear' }}
       >
         <ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md">
           <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
@@ -311,28 +323,10 @@ export function HeaderMegaMenu() {
                 <IconMoonStars size={20} stroke={1.5} />
               )}
             </ActionIcon>
-            <Modal
-              opened={opened}
-              onClose={close}
-              // title="Authentication"
-              centered
-              overlayProps={{
-                color: theme.colorScheme === 'dark' ? theme.colors.dark[9] : theme.colors.gray[2],
-                opacity: 0.55,
-                blur: 3,
-              }}
-              withCloseButton={false}
-            >
-              {/* Modal content */}
-              <AuthenticationForm />
-            </Modal>
 
-            <Group position="center">
-              <Button onClick={open} variant="default">
-                Log in
-              </Button>
-            </Group>
-            <Button>Sign up</Button>
+            <Button onClick={openModal} variant="default">
+              Log in
+            </Button>
           </Group>
         </ScrollArea>
       </Drawer>

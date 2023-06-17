@@ -1,4 +1,33 @@
-import { Group, Avatar, Text, Accordion } from '@mantine/core';
+import { Group, Avatar, Text, Accordion, createStyles, rem } from '@mantine/core';
+const useStyles = createStyles((theme) => ({
+  root: {
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+    borderRadius: theme.radius.sm,
+  },
+
+  item: {
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
+    border: `${rem(1)} solid transparent`,
+    position: 'relative',
+    zIndex: 0,
+    transition: 'transform 150ms ease',
+
+    '&[data-active]': {
+      transform: 'scale(1.03)',
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
+      boxShadow: theme.shadows.md,
+      borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
+      borderRadius: theme.radius.md,
+      zIndex: 1,
+    },
+  },
+
+  chevron: {
+    '&[data-rotate]': {
+      transform: 'rotate(-90deg)',
+    },
+  },
+}));
 
 const charactersList = [
   {
@@ -50,6 +79,7 @@ function AccordionLabel({ label, image, description }: AccordionLabelProps) {
 }
 
 export function AccordionPilih() {
+  const { classes } = useStyles();
   const items = charactersList.map((item) => (
     <Accordion.Item value={item.id} key={item.label}>
       <Accordion.Control>
@@ -62,7 +92,14 @@ export function AccordionPilih() {
   ));
 
   return (
-    <Accordion chevronPosition="right" variant="contained">
+    <Accordion
+      // maw={420}
+      mx="auto"
+      variant="filled"
+      defaultValue="customization"
+      classNames={classes}
+      className={classes.root}
+    >
       {items}
     </Accordion>
   );
