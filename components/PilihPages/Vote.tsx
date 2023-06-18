@@ -16,7 +16,7 @@ import { IconCircleCheck, IconCircleX, IconClipboard } from '@tabler/icons-react
 
 const myFont = localFonts({ src: '../fonts/Fontspring-DEMO-greycliffcf-heavy.otf' });
 
-export default function ImageCheckboxes() {
+export default function VotePaslon() {
   const [value, setValue] = useState('');
   const [select, setSelect] = useState('');
 
@@ -86,7 +86,6 @@ export default function ImageCheckboxes() {
               ]}
             >
               <Radio
-                // classNames={classes}
                 label={
                   <Paslon
                     image={
@@ -149,6 +148,7 @@ export default function ImageCheckboxes() {
             size="lg"
             mt={20}
             leftIcon={<IconClipboard />}
+            fullWidth
             disabled
           >
             Pilih

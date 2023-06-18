@@ -15,7 +15,7 @@ import {
 import { useState } from 'react';
 import localFonts from 'next/font/local';
 import { Calon } from './Calon';
-import { IconCameraSelfie, IconCircleCheck, IconPhoto, IconPrinter } from '@tabler/icons-react';
+import { IconCircleCheck, IconPhoto, IconPrinter } from '@tabler/icons-react';
 
 const myFont = localFonts({ src: '../fonts/Fontspring-DEMO-greycliffcf-heavy.otf' });
 
@@ -90,7 +90,6 @@ export default function NoUrutControl() {
               }
               title={'Muhammad Arfi Wahyudi'}
               author={'Ketua'}
-              link="https://mantine.dev/"
             />
             <Calon
               image={
@@ -98,7 +97,6 @@ export default function NoUrutControl() {
               }
               title={'Anugerah Surya Permana'}
               author={'Wakil Ketua'}
-              link="https://mantine.dev/"
             />
           </SimpleGrid>
         </Center>
