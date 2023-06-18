@@ -48,7 +48,7 @@ function Demo() {
           <Image src={imageUrl} radius="md" className={classes.image} />
         </div>
         <div>
-          <Blockquote cite="– Wildan Miftah Alfarid" icon={<IconFlame size="1.5rem" />}>
+          <Blockquote cite="– Wildan Miftah Alfarid" color="blue">
             Pemira adalah pesta demokrasi yang memfasilitasi regenerasi lembaga kampus. Dalam waktu
             dekat, pengurus DPM, Sema, dan Ketua Tingkat akan digantikan untuk tahun akademik
             2022/2023. Regenerasi kepemimpinan diperlukan untuk melanjutkan program dan memberikan
