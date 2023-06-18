@@ -90,8 +90,6 @@ export default function NoUrutControl() {
               }
               title={'Muhammad Arfi Wahyudi'}
               author={'Ketua'}
-              views={1000}
-              comments={5}
               link="https://mantine.dev/"
             />
             <Calon
@@ -100,8 +98,6 @@ export default function NoUrutControl() {
               }
               title={'Anugerah Surya Permana'}
               author={'Wakil Ketua'}
-              views={1000}
-              comments={5}
               link="https://mantine.dev/"
             />
           </SimpleGrid>
