@@ -44,7 +44,7 @@ export default createStyles((theme) => ({
     height: rem(64),
     paddingLeft: rem(46),
     paddingRight: rem(46),
-    fontSize: rem(20),
+    fontSize: rem(18),
 
     [BREAKPOINT]: {
       height: rem(54),
@@ -111,7 +111,7 @@ export default createStyles((theme) => ({
 
   title: {
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontSize: rem(100),
+    fontSize: rem(90),
     fontWeight: 900,
     lineHeight: 0.9,
     letterSpacing: rem(1),
@@ -120,7 +120,7 @@ export default createStyles((theme) => ({
     color: theme.colorScheme === 'dark' ? theme.white : theme.black,
 
     [theme.fn.smallerThan('sm')]: {
-      fontSize: rem(31),
+      fontSize: rem(29),
       // lineHeight: 1.2,
     },
   },

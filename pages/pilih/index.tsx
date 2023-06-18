@@ -16,6 +16,7 @@ import TabContent from '../../components/PilihPages/TabContent';
 import { Logo } from '../../components/Sidebar/_logo';
 import { MainLinks } from '../../components/Sidebar/_mainLinks';
 import { User } from '../../components/Sidebar/_user';
+import Link from 'next/link';
 
 export default function AppShellDemo() {
   const theme = useMantineTheme();
@@ -69,11 +70,13 @@ export default function AppShellDemo() {
                 />
               </MediaQuery>
               {/* <Logo colorScheme={colorScheme} /> */}
-              {theme.colorScheme === 'dark' ? (
-                <Image src="/3.png" width="100px" height="26.16px" />
-              ) : (
-                <Image src="/2.png" width="100px" height="26.16px" />
-              )}
+              <Link href="/">
+                {theme.colorScheme === 'dark' ? (
+                  <Image src="/3.png" width="100px" height="26.16px" />
+                ) : (
+                  <Image src="/2.png" width="100px" height="26.16px" />
+                )}
+              </Link>
 
               <ActionIcon
                 variant="default"

@@ -1,7 +1,16 @@
 import React from 'react';
-import { Button, Image, SimpleGrid, Text, useMantineColorScheme, Group, rem } from '@mantine/core';
+import {
+  Button,
+  Image,
+  SimpleGrid,
+  Text,
+  useMantineColorScheme,
+  Group,
+  rem,
+  Blockquote,
+} from '@mantine/core';
 import { Prism } from '@mantine/prism';
-import { IconMoonStars, IconSun } from '@tabler/icons-react';
+import { IconFlame, IconMoonStars, IconSun } from '@tabler/icons-react';
 import { PageSection } from '../PageSection/PageSection';
 import image from './dark-theme-image.png';
 import useStyles from './Sambutan.styles';
@@ -39,13 +48,22 @@ function Demo() {
           <Image src={imageUrl} radius="md" className={classes.image} />
         </div>
         <div>
-          <Text size="lg">
-            Add dark theme to your application with just a few lines of code – Mantine exports
-            global styles both for light and dark theme, all components support dark theme out of
-            the box.
-          </Text>
+          <Blockquote cite="– Wildan Miftah Alfarid" icon={<IconFlame size="1.5rem" />}>
+            Pemira adalah pesta demokrasi yang memfasilitasi regenerasi lembaga kampus. Dalam waktu
+            dekat, pengurus DPM, Sema, dan Ketua Tingkat akan digantikan untuk tahun akademik
+            2022/2023. Regenerasi kepemimpinan diperlukan untuk melanjutkan program dan memberikan
+            inovasi ke depan. Panitia Pemilihan Raya (Papera) dibentuk berdasarkan AD/ART Imapolstat
+            sebagai badan independen yang bertanggung jawab atas pelaksanaan Pemira.
+          </Blockquote>
+          {/* <Text size="lg">
+            Pemira adalah pesta demokrasi yang memfasilitasi regenerasi lembaga kampus. Dalam waktu
+            dekat, pengurus DPM, Sema, dan Ketua Tingkat akan digantikan untuk tahun akademik
+            2022/2023. Regenerasi kepemimpinan diperlukan untuk melanjutkan program dan memberikan
+            inovasi ke depan. Panitia Pemilihan Raya (Papera) dibentuk berdasarkan AD/ART Imapolstat
+            sebagai badan independen yang bertanggung jawab atas pelaksanaan Pemira.
+          </Text> */}
 
-          <Prism
+          {/* <Prism
             language="tsx"
             noCopy
             mt="xl"
@@ -58,9 +76,9 @@ function Demo() {
             }}
           >
             {code}
-          </Prism>
+          </Prism> */}
 
-          <Group position="center" mt="xl">
+          {/* <Group position="center" mt="xl">
             <Button
               variant="default"
               radius="md"
@@ -75,7 +93,7 @@ function Demo() {
             >
               Toggle color scheme
             </Button>
-          </Group>
+          </Group> */}
         </div>
       </SimpleGrid>
     </PageSection>
