@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { MantineProvider, ColorScheme, ColorSchemeProvider } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import { HeaderMegaMenu } from '../components/Header/Header';
+import '../components/fonts/styles.css';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -28,7 +29,6 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
         <MantineProvider
           theme={{
             colorScheme,
-            headings: { fontFamily: 'Greycliff CF, sans-serif' },
           }}
           withGlobalStyles
           withNormalizeCSS

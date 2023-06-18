@@ -13,9 +13,7 @@ import {
 import { GithubIcon } from '@mantine/ds';
 import { FEATURES_DATA } from './features';
 import useStyles from './Jumbotron.styles';
-import localFont from 'next/font/local';
-
-const myFont = localFont({ src: '../fonts/Fontspring-DEMO-greycliffcf-heavy.otf' });
+import { IconBook } from '@tabler/icons-react';
 
 export function Jumbotron() {
   const { classes, cx } = useStyles();
@@ -42,7 +40,7 @@ export function Jumbotron() {
     <div className={classes.jumbotron}>
       <Container size={1100} className={classes.inner}>
         {/* <Hero /> */}
-        <Title className={[myFont.className, classes.title].join(' ')}>
+        <Title className={classes.title}>
           A{' '}
           <Text component="span" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }} inherit>
             fully featured
@@ -84,10 +82,10 @@ export function Jumbotron() {
             radius="md"
             className={cx(classes.control, classes.githubControl)}
             color={theme.colorScheme === 'dark' ? 'gray' : 'dark'}
-            leftIcon={<GithubIcon size={22} />}
-            styles={{ leftIcon: { marginRight: rem(12) } }}
+            leftIcon={<IconBook size={22} />}
+            styles={{ leftIcon: { marginRight: rem(10) } }}
           >
-            GitHub
+            Pedoman
           </Button>
         </Group>
       </Container>
