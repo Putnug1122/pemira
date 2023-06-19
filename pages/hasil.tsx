@@ -26,10 +26,10 @@ import { Doughnut } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const data = {
-  labels: ['Arfi & Anugerah', 'Gestyan & Kamal', 'Farhan & Kautsar'],
+  labels: [' Arfi & Anugerah', ' Gestyan & Kamal', ' Farhan & Kautsar'],
   datasets: [
     {
-      label: '# of Votes',
+      label: ' Votes',
       data: [871, 784, 588],
       backgroundColor: [
         'rgba(75, 192, 192, 0.2)',
@@ -158,12 +158,24 @@ export default function AppShellDemo() {
               Pemilihan Ketua dan Wakil Ketua Senat Mahasiswa Putaran ke-1
             </Title>
           </MediaQuery>
-          <Doughnut
-            data={data}
-            options={{
+          <div style={{ maxWidth: '500px', maxHeight: '500px', margin: 'auto'}}>
+            <Doughnut style={{alignItems:'center', marginTop:'2.5em'}}
+              data={data}
+              options={{
               responsive: true,
-            }}
-          />
+              plugins: {
+                legend: {
+                  position: 'bottom',
+                  labels: {
+                    padding: 20,
+                    usePointStyle: true,
+                    pointStyle: 'circle',
+                  },
+                },
+              },
+              }}
+            />
+          </div>
         </Card>
       </AppShell>
     </>
