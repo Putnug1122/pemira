@@ -117,18 +117,24 @@ export function HeaderMegaMenu() {
           )}
 
           <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
+            {/* 
+              @ts-ignore */}
             <ReactLink to="pemilihan" className={classes.link} smooth>
               Pemilihan
             </ReactLink>
+            {/* @ts-ignore */}
             <ReactLink to="sambutan" className={classes.link} smooth>
               Sambutan
             </ReactLink>
+            {/* @ts-ignore */}
             <ReactLink to="timeline" className={classes.link} smooth>
               Timeline
             </ReactLink>
+            {/* @ts-ignore */}
             <ReactLink to="galeri" className={classes.link} smooth>
               Galeri
             </ReactLink>
+            {/* @ts-ignore */}
             <ReactLink to="berita" className={classes.link} smooth>
               Berita
             </ReactLink>
@@ -194,18 +200,23 @@ export function HeaderMegaMenu() {
         <ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md">
           <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
 
+          {/* @ts-ignore */}
           <ReactLink to="pemilihan" className={classes.link} smooth>
             Pemilihan
           </ReactLink>
+          {/* @ts-ignore */}
           <ReactLink to="sambutan" className={classes.link} smooth>
             Sambutan
           </ReactLink>
+          {/* @ts-ignore */}
           <ReactLink to="timeline" className={classes.link} smooth>
             Timeline
           </ReactLink>
+          {/* @ts-ignore */}
           <ReactLink to="galeri" className={classes.link} smooth>
             Galeri
           </ReactLink>
+          {/* @ts-ignore */}
           <ReactLink to="berita" className={classes.link} smooth>
             Berita
           </ReactLink>
