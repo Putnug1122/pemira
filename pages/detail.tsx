@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 import { mockdata } from '../components/Berita/Mockdata';
 import { IconCalendarEvent, IconEdit, IconTags } from '@tabler/icons-react';
 
-
 const data = [
   {
     title: 'About',
@@ -72,7 +71,6 @@ const data = [
   },
 ];
 
-
 export default function DetailBerita() {
     const router = useRouter();
     const { judul } = router.query;
@@ -82,8 +80,9 @@ export default function DetailBerita() {
 
   return (
     <>
+      <Box sx={(theme) => ({ position: 'relative', zIndex: 1, boxShadow: theme.shadows.sm })}>
         <HeaderMegaMenu />
-        <Container py="xl" size={'75%'} >
+        <Container py="xl" size={'80%'}>
         <Card p="md" radius="md" style={{ width: '100%', textAlign: 'center' }}>
           <Text mt={20} align="center" style={{ fontSize: '2rem', fontWeight: 'bold' }}>
             {berita?.title}
@@ -121,7 +120,7 @@ export default function DetailBerita() {
             {berita.description.paragraph_2.split('\n').map((paragraph, index) => (
               <Text key={index} mt={15}>{paragraph}</Text>
             ))}
-            {([1,5,6,7,8,9,10,12,13,14].includes(berita?.id)) ? ( // Menambahkan kondisi berdasarkan id berita
+            {([1,5,6,7,8,9,10,11,12,13,14].includes(berita?.id)) ? ( // Menambahkan kondisi berdasarkan id berita
               <>
                 {berita.description.paragraph_3.split('\n').map((paragraph, index) => (
                   <Text key={index} mt={15} ml='xl'>{paragraph}</Text>
@@ -167,8 +166,9 @@ export default function DetailBerita() {
           )}
           </Text>
         </Card>
-      </Container>
-        <FooterLinks data={data} />
+        </Container>
+      </Box>
+      <FooterLinks data={data}/>
     </>
   );
 }
