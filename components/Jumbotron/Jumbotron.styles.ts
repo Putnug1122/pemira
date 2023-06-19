@@ -121,7 +121,7 @@ export default createStyles((theme) => ({
 
     [theme.fn.smallerThan('sm')]: {
       fontSize: rem(29),
-      // lineHeight: 1.2,
+      lineHeight: 1.2,
     },
   },
 }));

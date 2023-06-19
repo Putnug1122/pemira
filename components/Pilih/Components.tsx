@@ -24,15 +24,18 @@ const data = [
 
 export function Components() {
   return (
-    <PageSection
-      title="Bisa Pilih Siapa Aja?"
-      // description="Extend default theme with any amount of additional colors, replace shadows, radius, spacing, fonts and many other properties to match your design requirements."
-      sx={(theme) => ({
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
-      })}
-      centerTitle
-    >
-      <AccordionPilih />
-    </PageSection>
+    <section id="pemilihan">
+      <PageSection
+        title="Bisa Pilih Siapa Aja?"
+        // description="Extend default theme with any amount of additional colors, replace shadows, radius, spacing, fonts and many other properties to match your design requirements."
+        sx={(theme) => ({
+          backgroundColor:
+            theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
+        })}
+        centerTitle
+      >
+        <AccordionPilih />
+      </PageSection>
+    </section>
   );
 }
