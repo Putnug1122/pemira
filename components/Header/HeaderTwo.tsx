@@ -18,7 +18,6 @@ import {
 import { useDisclosure, useScrollIntoView } from '@mantine/hooks';
 import { IconMoonStars, IconSun } from '@tabler/icons-react';
 import { AuthenticationForm } from '../Login/Login';
-import { Link } from 'react-scroll';
 const HEADER_HEIGHT = rem(60);
 
 const useStyles = createStyles((theme) => ({
@@ -113,6 +112,7 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
         event.preventDefault();
         setActive(link.link);
         close();
+        // scrollIntoView;
       }}
     >
       {link.label}

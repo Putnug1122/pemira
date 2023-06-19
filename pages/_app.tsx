@@ -6,6 +6,7 @@ import { MantineProvider, ColorScheme, ColorSchemeProvider } from '@mantine/core
 import { Notifications } from '@mantine/notifications';
 import { HeaderMegaMenu } from '../components/Header/Header';
 import '../components/fonts/styles.css';
+import { NavigationProgress } from '@mantine/nprogress';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -34,6 +35,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
           withNormalizeCSS
         >
           {/* <HeaderMegaMenu /> */}
+          <NavigationProgress />
           <Component {...pageProps} />
           <Notifications />
         </MantineProvider>

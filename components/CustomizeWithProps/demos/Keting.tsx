@@ -1,64 +1,58 @@
 import { Timeline, Text } from '@mantine/core';
-import {
-  IconGitBranch,
-  IconGitPullRequest,
-  IconGitCommit,
-  IconMessageDots,
-} from '@tabler/icons-react';
+import { IconCalendarTime } from '@tabler/icons-react';
 
 export function KetingTimeline() {
   return (
-    <Timeline active={1} bulletSize={24} lineWidth={2}>
-      <Timeline.Item bullet={<IconGitBranch size={12} />} title="New branch">
-        <Text color="dimmed" size="sm">
-          You&apos;ve created new branch{' '}
-          <Text variant="link" component="span" inherit>
-            fix-notifications
-          </Text>{' '}
-          from master
-        </Text>
-        <Text size="xs" mt={4}>
-          2 hours ago
-        </Text>
-      </Timeline.Item>
-
-      <Timeline.Item bullet={<IconGitCommit size={12} />} title="Commits">
-        <Text color="dimmed" size="sm">
-          You&apos;ve pushed 23 commits to
-          <Text variant="link" component="span" inherit>
-            fix-notifications branch
-          </Text>
-        </Text>
-        <Text size="xs" mt={4}>
-          52 minutes ago
-        </Text>
-      </Timeline.Item>
-
+    <Timeline active={8} bulletSize={24} lineWidth={2} color="yellow">
       <Timeline.Item
-        title="Pull request"
-        bullet={<IconGitPullRequest size={12} />}
-        lineVariant="dashed"
+        bullet={<IconCalendarTime size={12} />}
+        title="Pendaftaran Calon Ketua Tingkat"
       >
-        <Text color="dimmed" size="sm">
-          You&apos;ve submitted a pull request
-          <Text variant="link" component="span" inherit>
-            Fix incorrect notification message (#187)
-          </Text>
-        </Text>
         <Text size="xs" mt={4}>
-          34 minutes ago
+          12 - 16 September
         </Text>
       </Timeline.Item>
 
-      <Timeline.Item title="Code review" bullet={<IconMessageDots size={12} />}>
-        <Text color="dimmed" size="sm">
-          <Text variant="link" component="span" inherit>
-            Robert Gluesticker
-          </Text>{' '}
-          left a code review on your pull request
-        </Text>
+      <Timeline.Item bullet={<IconCalendarTime size={12} />} title="Pengumpulan Berkas">
         <Text size="xs" mt={4}>
-          12 minutes ago
+          12 - 16 September
+        </Text>
+      </Timeline.Item>
+
+      <Timeline.Item title="Seleksi Berkas" bullet={<IconCalendarTime size={12} />}>
+        <Text size="xs" mt={4}>
+          17 - 18 September
+        </Text>
+      </Timeline.Item>
+
+      <Timeline.Item title="Wawancara Calon Ketua Tingkat" bullet={<IconCalendarTime size={12} />}>
+        <Text size="xs" mt={4}>
+          19 September
+        </Text>
+      </Timeline.Item>
+      <Timeline.Item title="Pengundian Nomor Urut" bullet={<IconCalendarTime size={12} />}>
+        <Text size="xs" mt={4}>
+          20 September
+        </Text>
+      </Timeline.Item>
+      <Timeline.Item title="Masa Kampanye" bullet={<IconCalendarTime size={12} />}>
+        <Text size="xs" mt={4}>
+          21 - 24 September
+        </Text>
+      </Timeline.Item>
+      <Timeline.Item title="Masa Tenang" bullet={<IconCalendarTime size={12} />}>
+        <Text size="xs" mt={4}>
+          25 - 26 September
+        </Text>
+      </Timeline.Item>
+      <Timeline.Item title="Pemilihan Ketua Tingkat" bullet={<IconCalendarTime size={12} />}>
+        <Text size="xs" mt={4}>
+          27 - 28 September
+        </Text>
+      </Timeline.Item>
+      <Timeline.Item title="Pelantikan" bullet={<IconCalendarTime size={12} />}>
+        <Text size="xs" mt={4}>
+          24 - 27 Oktober
         </Text>
       </Timeline.Item>
     </Timeline>

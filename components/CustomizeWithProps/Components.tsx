@@ -6,7 +6,7 @@ import { SemaTimeline } from './demos/Sema';
 import { KetingTimeline } from './demos/Keting';
 
 const data = [
-  { demo: DPMTimeline, icon: IconForms, name: 'DPM', description: 'Timeline DPM 2022' },
+  { demo: DPMTimeline, icon: IconCalendar, name: 'DPM', description: 'Timeline DPM 2022' },
   {
     demo: SemaTimeline,
     icon: IconCalendar,
