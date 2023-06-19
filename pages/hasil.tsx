@@ -10,17 +10,55 @@ import {
   useMantineColorScheme,
   useMantineTheme,
   Image,
+  Card,
+  Title,
+  createStyles,
+  rem,
 } from '@mantine/core';
 import { IconMoon, IconSun } from '@tabler/icons-react';
-import TabContent from '../../components/PilihPages/TabContent';
-import { MainLinks } from '../../components/Sidebar/_mainLinks';
-import { User } from '../../components/Sidebar/_user';
+
+import { MainLinks } from '../components/Sidebar/_mainLinks';
+import { User } from '../components/Sidebar/_user';
 import Link from 'next/link';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
+
+ChartJS.register(ArcElement, Tooltip, Legend);
+
+export const data = {
+  labels: ['Arfi & Anugerah', 'Gestyan & Kamal', 'Farhan & Kautsar'],
+  datasets: [
+    {
+      label: '# of Votes',
+      data: [871, 784, 588],
+      backgroundColor: [
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+      ],
+      borderColor: ['rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+      borderWidth: 1,
+    },
+  ],
+};
+
+const useStyles = createStyles((theme) => ({
+  title: {
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontWeight: 900,
+    lineHeight: 0.9,
+    letterSpacing: rem(1),
+    margin: 0,
+    padding: 0,
+    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+  },
+}));
 
 export default function AppShellDemo() {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const { classes } = useStyles();
   return (
     <>
       <AppShell
@@ -89,7 +127,44 @@ export default function AppShellDemo() {
           </Header>
         }
       >
-        <TabContent />
+        <Card
+          withBorder
+          radius="md"
+          padding="xl"
+          sx={(theme) => ({
+            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
+          })}
+        >
+          <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
+            <Title
+              align="center"
+              my={15}
+              gradient={{ from: 'yellow', to: 'blue', deg: 45 }}
+              variant="gradient"
+              className={classes.title}
+            >
+              Pemilihan Ketua dan Wakil Ketua Senat Mahasiswa Putaran ke-1
+            </Title>
+          </MediaQuery>
+          <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+            <Title
+              align="center"
+              my={15}
+              gradient={{ from: 'yellow', to: 'blue', deg: 45 }}
+              variant="gradient"
+              order={3}
+              className={classes.title}
+            >
+              Pemilihan Ketua dan Wakil Ketua Senat Mahasiswa Putaran ke-1
+            </Title>
+          </MediaQuery>
+          <Doughnut
+            data={data}
+            options={{
+              responsive: true,
+            }}
+          />
+        </Card>
       </AppShell>
     </>
   );

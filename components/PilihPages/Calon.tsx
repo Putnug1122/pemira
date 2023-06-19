@@ -1,5 +1,15 @@
-import { IconEye, IconMessageCircle } from '@tabler/icons-react';
-import { Card, Text, Group, Center, createStyles, getStylesRef, rem } from '@mantine/core';
+import {
+  Card,
+  Text,
+  Group,
+  createStyles,
+  getStylesRef,
+  rem,
+  Modal,
+  Title,
+  List,
+} from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -54,65 +64,69 @@ const useStyles = createStyles((theme) => ({
 }));
 
 interface ImageCardProps {
-  link: string;
   image: string;
   title: string;
   author: string;
-  views: number;
-  comments: number;
 }
 
 export function Calon({
   image = 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
   title = 'Anugerah Surya Permana',
   author = 'Wakil Ketua',
-  views = 1000,
-  comments = 5,
-  link = 'https://mantine.dev/',
 }: ImageCardProps) {
   const { classes, theme } = useStyles();
-
+  const [opened, { open, close }] = useDisclosure(false);
   return (
-    <Card
-      p="lg"
-      shadow="lg"
-      className={classes.card}
-      radius="md"
-      component="a"
-      href={link}
-      target="_blank"
-    >
-      <div className={classes.image} style={{ backgroundImage: `url(${image})` }} />
-      <div className={classes.overlay} />
+    <>
+      <Card p="lg" shadow="lg" className={classes.card} radius="md" onClick={open}>
+        <div className={classes.image} style={{ backgroundImage: `url(${image})` }} />
+        <div className={classes.overlay} />
 
-      <div className={classes.content}>
-        <div>
-          <Text size="lg" className={classes.title} weight={500}>
-            {title}
-          </Text>
-
-          <Group position="apart" spacing="xs">
-            <Text size="sm" className={classes.author}>
-              {author}
+        <div className={classes.content}>
+          <div>
+            <Text size="lg" className={classes.title} weight={500}>
+              {title}
             </Text>
 
-            <Group spacing="lg">
-              <Center>
-                <IconEye size="1rem" stroke={1.5} color={theme.colors.dark[2]} />
-                <Text size="sm" className={classes.bodyText}>
-                  {views}
-                </Text>
-              </Center>
-              <Center>
-                <IconMessageCircle size="1rem" stroke={1.5} color={theme.colors.dark[2]} />
-                <Text size="sm" className={classes.bodyText}>
-                  {comments}
-                </Text>
-              </Center>
+            <Group position="apart" spacing="xs">
+              <Text size="sm" className={classes.author}>
+                {author}
+              </Text>
             </Group>
-          </Group>
+          </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+      <Modal
+        opened={opened}
+        onClose={close}
+        title={title}
+        overlayProps={{
+          color: theme.colorScheme === 'dark' ? theme.colors.dark[9] : theme.colors.gray[2],
+          opacity: 0.55,
+          blur: 3,
+        }}
+        size="auto"
+      >
+        <Title order={5}>Pengalaman Organisasi</Title>
+        <List type="ordered">
+          <List.Item>Clone or download repository from GitHub</List.Item>
+          <List.Item>Install dependencies with yarn</List.Item>
+          <List.Item>To start development server run npm start command</List.Item>
+          <List.Item>Run tests to make sure your changes do not break the build</List.Item>
+          <List.Item>Submit a pull request once you are done</List.Item>
+        </List>
+
+        <Title order={5} mt={20}>
+          Prestasi
+        </Title>
+        <List type="ordered">
+          <List.Item>Clone or download repository from GitHub</List.Item>
+          <List.Item>Install dependencies with yarn</List.Item>
+          <List.Item>To start development server run npm start command</List.Item>
+          <List.Item>Run tests to make sure your changes do not break the build</List.Item>
+          <List.Item>Submit a pull request once you are done</List.Item>
+        </List>
+      </Modal>
+    </>
   );
 }

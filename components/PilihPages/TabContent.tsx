@@ -1,7 +1,7 @@
 import { Tabs } from '@mantine/core';
 import { IconInfoCircle, IconSelect } from '@tabler/icons-react';
-import Info from './Info';
-import ImageCheckboxes from './Vote';
+import NoUrutControl from './NoUrutControl';
+import VotePaslon from './Vote';
 
 export default function TabContent() {
   return (
@@ -16,11 +16,11 @@ export default function TabContent() {
       </Tabs.List>
 
       <Tabs.Panel value="gallery" pt="xs">
-        <Info />
+        <NoUrutControl />
       </Tabs.Panel>
 
       <Tabs.Panel value="settings" pt="xs">
-        <ImageCheckboxes />
+        <VotePaslon />
       </Tabs.Panel>
     </Tabs>
   );

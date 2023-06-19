@@ -35,10 +35,10 @@ export function User() {
           />
           <Box sx={{ flex: 1 }}>
             <Text size="sm" weight={500}>
-              Amy Horsefighter
+              Someone STIS
             </Text>
             <Text color="dimmed" size="xs">
-              ahorsefighter@gmail.com
+              222011xxx@stis.ac.id
             </Text>
           </Box>
 

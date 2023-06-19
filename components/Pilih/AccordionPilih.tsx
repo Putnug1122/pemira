@@ -33,28 +33,28 @@ const charactersList = [
   {
     id: 'bender',
     image: 'https://img.icons8.com/clouds/256/000000/futurama-bender.png',
-    label: 'Bender Bending Rodríguez',
-    description: 'Fascinated with cooking, though has no sense of taste',
+    label: 'Dewan Perwakilan Mahasiswa',
+    description: 'DPM',
     content:
-      "Bender Bending Rodríguez, (born September 4, 2996), designated Bending Unit 22, and commonly known as Bender, is a bending unit created by a division of MomCorp in Tijuana, Mexico, and his serial number is 2716057. His mugshot id number is 01473. He is Fry's best friend.",
+      'Dewan Perwakilan Mahasiswa (DPM) merupakan perubahan bentuk dari Badan Perwakilan Mahasiswa (BPM) dan Majelis Permusyawaratan Mahasiswa (MPM) yang menjalankan fungsi legislatif Imapolstat dan salah satu pemegang kekuasaan tertinggi dalam Imapolstat melalui Sidang Umum DPM. DPM menyalurkan aspirasi dari seluruh anggota Imapolstat yang dalam hal ini adalah mahasiswa/i Politeknik Statistika STIS secara keseluruhan, baik yang berkaitan dengan kinerja Sema maupun kepada Pimpinan Politeknik Statistika STIS. Anggota DPM terdiri dari ketua kelas terpilih dari masing-masing kelas atas persetujuan Direktur Politeknik Statistika STIS serta staf administrasi dan staf ahli yang dipilih oleh Ketua DPM.',
   },
 
   {
     id: 'carol',
     image: 'https://img.icons8.com/clouds/256/000000/futurama-mom.png',
-    label: 'Carol Miller',
-    description: 'One of the richest people on Earth',
+    label: 'Senat mahasiswa',
+    description: 'Sema',
     content:
-      "Carol Miller (born January 30, 2880), better known as Mom, is the evil chief executive officer and shareholder of 99.7% of Momcorp, one of the largest industrial conglomerates in the universe and the source of most of Earth's robots. She is also one of the main antagonists of the Futurama series.",
+      'Senat mahasiswa (Sema) merupakan perubahan bentuk dari Badan Eksekutif Mahasiswa (BEM) yang menjalankan fungsi eksekutif Imapolstat. Dalam hal ini, Sema bertugas untuk mengelola keuangan dan inventaris Imapolstat yang akan dipertanggungjawabkan kepada DPM dan/atau Pimpinan Politeknik Statistika STIS. Selain itu, Sema juga berperan sebagai pionir seluruh kegiatan mahasiswa dalam unit kegiatan mahasiswa (UKM) untuk menjalankan program kerjanya. Anggota Sema dipilih melalui open recruitment yang diadakan secara mandiri oleh Ketua Sema.',
   },
 
   {
     id: 'homer',
     image: 'https://img.icons8.com/clouds/256/000000/homer-simpson.png',
-    label: 'Homer Simpson',
-    description: 'Overweight, lazy, and often ignorant',
+    label: 'Ketua Tingkat',
+    description: 'Ketua Tingkat I-IV',
     content:
-      'Homer Jay Simpson (born May 12) is the main protagonist and one of the five main characters of The Simpsons series(or show). He is the spouse of Marge Simpson and father of Bart, Lisa and Maggie Simpson.',
+      'Ketua Tingkat merupakan seseorang yang bertanggung jawab atas seluruh kegiatan yang dilaksanakan oleh Pengurus Tingkat. Pengurus Tingkat merupakan badan otonom di bawah naungan Senat Mahasiswa (Sema) yang berfungsi sebagai wadah untuk mengakomodir kegiatan dan aspirasi dari setiap tingkat. Pengurus Tingkat berkordinasi dengan Sema terhadap seluruh kegiatannya. Pengurus Tingkat dipilih melalui open recruitment yang diadakan secara mandiri oleh Ketua Tingkat. Setiap tingkat memiliki Ketua dan Pengurus Tingkat masing-masing.',
   },
 ];
 
