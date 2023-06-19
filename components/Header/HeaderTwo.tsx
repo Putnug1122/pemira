@@ -22,7 +22,7 @@ const HEADER_HEIGHT = rem(60);
 
 const useStyles = createStyles((theme) => ({
   root: {
-    position: 'relative',
+    position: 'sticky',
     zIndex: 1,
   },
 
@@ -95,12 +95,12 @@ interface HeaderResponsiveProps {
 }
 
 export function HeaderResponsive({ links }: HeaderResponsiveProps) {
-  const [opened, { toggle, open, close }] = useDisclosure(false);
+  const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
   const theme = useMantineTheme();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const [openedLogin] = useDisclosure(false);
+  const [openedLogin, { open }] = useDisclosure(false);
   const { scrollIntoView, targetRef } = useScrollIntoView();
 
   const items = links.map((link) => (

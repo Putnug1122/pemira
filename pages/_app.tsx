@@ -8,6 +8,7 @@ import { HeaderMegaMenu } from '../components/Header/Header';
 import '../components/fonts/styles.css';
 import { NavigationProgress } from '@mantine/nprogress';
 
+
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
   const [colorScheme, setColorScheme] = useState<ColorScheme>(props.colorScheme);

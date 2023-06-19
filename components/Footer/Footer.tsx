@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Text, Group, Image, useMantineTheme } from '@mantine/core';
 import { TwitterButton, DiscordButton } from '@mantine/ds';
-import { Logo } from '../Logo/Logo';
 import { LinksGroup } from './LinksGroup/LinksGroup';
 import { FOOTER_LINKS_DATA } from './data';
 import useStyles from './Footer.styles';

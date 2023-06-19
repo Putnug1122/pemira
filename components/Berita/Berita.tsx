@@ -1,26 +1,8 @@
-import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio } from '@mantine/core';
+import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio, Button, rem, Box, Flex } from '@mantine/core';
+import { IconCalendarEvent, IconEdit } from '@tabler/icons-react';
 import { PageSection } from '../PageSection/PageSection';
-
-const mockdata = [
-  {
-    title: 'Top 10 places to visit in Norway this summer',
-    image:
-      'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-    date: 'August 18, 2022',
-  },
-  {
-    title: 'Best forests to visit in North America',
-    image:
-      'https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-    date: 'August 27, 2022',
-  },
-  {
-    title: 'Hawaii beaches review: better than you think',
-    image:
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-    date: 'September 9, 2022',
-  },
-];
+import { mockdata } from './Mockdata';
+import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -40,19 +22,58 @@ const useStyles = createStyles((theme) => ({
 
 export function Berita() {
   const { classes } = useStyles();
-  const cards = mockdata.map((article) => (
-    <Card key={article.title} p="md" radius="md" component="a" href="#" className={classes.card}>
-      <AspectRatio ratio={1920 / 1080}>
-        <Image src={article.image} />
-      </AspectRatio>
-      <Text color="dimmed" size="xs" transform="uppercase" weight={700} mt="md">
-        {article.date}
-      </Text>
-      <Text className={classes.title} mt={5}>
-        {article.title}
-      </Text>
-    </Card>
+  
+  // Ambil hanya 6 data pertama dari mockdata
+  const slicedMockdata = mockdata.sort((a, b) => b.id - a.id).slice(0, 6);
+
+  const cards = slicedMockdata.map((article) => (
+    <Link key={article.title} href={`/detail?judul=${article.title}`} className={classes.card} style={{ width: 'auto', height: 'auto', textDecoration:'none' }}>
+      <Card p="md" radius="md" className={classes.card} style={{ width: 'auto', height: 'auto' }}>
+        <AspectRatio ratio={1920 / 1080}>
+          <Image src={article.image} />
+        </AspectRatio>
+        <Text className={classes.title} mt={15}>
+          {article.title}
+        </Text>
+        <Text mt={10} size="sm" align='justify'>
+          {article.excerpt}
+        </Text>
+        <Box mt={20}>
+        <Flex align="center" justify="space-between">
+          <Flex align="center">
+          <IconCalendarEvent size={18} strokeWidth={2} color={'grey'} style={{ marginRight: '0.5rem' }}/>
+            <Text size="xs" color="gray" transform="uppercase" weight={700}>{article.date}</Text>
+          </Flex>
+          <Flex align="center">
+          <IconEdit size={18} strokeWidth={2} color={'grey'} style={{ marginRight: '0.5rem' }}/>
+            <Text size="xs" color="gray" transform="uppercase" weight={700}>{article.author}</Text>
+          </Flex>
+        </Flex>
+        </Box>
+      </Card>
+    </Link>
   ));
+
+  function ButtonDirect() {
+    return (
+      <Link href="/berita" style={{ textDecoration:'none' }}>
+        <Button
+          variant="light"
+          radius="xl"
+          size="md"
+          style={{
+            marginTop: rem(25),
+            display: 'flex',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            justifyContent: 'center'
+          }}
+        >
+          Lebih Banyak Berita
+        </Button>
+      </Link>
+    );
+  }
 
   return (
     <PageSection
@@ -66,6 +87,7 @@ export function Berita() {
         <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
           {cards}
         </SimpleGrid>
+        <ButtonDirect />
       </Container>
     </PageSection>
   );
