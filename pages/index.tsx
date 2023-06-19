@@ -25,8 +25,8 @@ export default function HomePage() {
     <>
       <Box sx={(theme) => ({ position: 'relative', zIndex: 1, boxShadow: theme.shadows.sm })}>
         <AffixComponent />
-        {/* <HeaderMegaMenu /> */}
-        <HeaderResponsive links={links} />
+        <HeaderMegaMenu />
+        {/* <HeaderResponsive links={links} /> */}
         <Jumbotron />
         <Waves height={40} width={150} />
         <Components />
