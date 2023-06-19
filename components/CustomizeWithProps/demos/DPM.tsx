@@ -1,64 +1,54 @@
 import { Timeline, Text } from '@mantine/core';
-import {
-  IconGitBranch,
-  IconGitPullRequest,
-  IconGitCommit,
-  IconMessageDots,
-} from '@tabler/icons-react';
+import { IconCalendarTime } from '@tabler/icons-react';
 
 export function DPMTimeline() {
   return (
-    <Timeline active={4} bulletSize={24} lineWidth={2} color="yellow">
-      <Timeline.Item bullet={<IconGitBranch size={12} />} title="New branch">
-        <Text color="dimmed" size="sm">
-          You&apos;ve created new branch{' '}
-          <Text variant="link" component="span" inherit>
-            fix-notifications
-          </Text>{' '}
-          from master
-        </Text>
+    <Timeline active={6} bulletSize={24} lineWidth={2} color="yellow">
+      <Timeline.Item bullet={<IconCalendarTime size={12} />} title="Pendaftaran Calon Ketua Kelas">
         <Text size="xs" mt={4}>
-          2 hours ago
-        </Text>
-      </Timeline.Item>
-
-      <Timeline.Item bullet={<IconGitCommit size={12} />} title="Commits">
-        <Text color="dimmed" size="sm">
-          You&apos;ve pushed 23 commits to
-          <Text variant="link" component="span" inherit>
-            fix-notifications branch
-          </Text>
-        </Text>
-        <Text size="xs" mt={4}>
-          52 minutes ago
+          20 - 22 Agustus
         </Text>
       </Timeline.Item>
 
       <Timeline.Item
-        title="Pull request"
-        bullet={<IconGitPullRequest size={12} />}
-        lineVariant="dashed"
+        bullet={<IconCalendarTime size={12} />}
+        title="Pemilihan Ketua Kelas Tingkat I-IV"
       >
-        <Text color="dimmed" size="sm">
-          You&apos;ve submitted a pull request
-          <Text variant="link" component="span" inherit>
-            Fix incorrect notification message (#187)
-          </Text>
-        </Text>
         <Text size="xs" mt={4}>
-          34 minutes ago
+          22 - 26 Agustus
         </Text>
       </Timeline.Item>
 
-      <Timeline.Item title="Code review" bullet={<IconMessageDots size={12} />}>
-        <Text color="dimmed" size="sm">
-          <Text variant="link" component="span" inherit>
-            Robert Gluesticker
-          </Text>{' '}
-          left a code review on your pull request
-        </Text>
+      <Timeline.Item
+        title="Pengumpulan Berkas Calon Ketua DPM"
+        bullet={<IconCalendarTime size={12} />}
+      >
         <Text size="xs" mt={4}>
-          12 minutes ago
+          29 Agustus
+        </Text>
+      </Timeline.Item>
+
+      <Timeline.Item
+        title="Penyampaian Visi dan Misi Ketua DPM"
+        bullet={<IconCalendarTime size={12} />}
+      >
+        <Text size="xs" mt={4}>
+          31 Agustus
+        </Text>
+      </Timeline.Item>
+      <Timeline.Item title="Musyawarah DPM Awal" bullet={<IconCalendarTime size={12} />}>
+        <Text size="xs" mt={4}>
+          1 September
+        </Text>
+      </Timeline.Item>
+      <Timeline.Item title="Musyawarah DPM Final" bullet={<IconCalendarTime size={12} />}>
+        <Text size="xs" mt={4}>
+          5 September
+        </Text>
+      </Timeline.Item>
+      <Timeline.Item title="Pelantikan Kawaka Sema dan DPM" bullet={<IconCalendarTime size={12} />}>
+        <Text size="xs" mt={4}>
+          19 - 23 September
         </Text>
       </Timeline.Item>
     </Timeline>

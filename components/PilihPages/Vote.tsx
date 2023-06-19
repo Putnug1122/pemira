@@ -1,26 +1,45 @@
 import {
-  Card,
-  Image,
-  Text,
   Group,
   SimpleGrid,
   Radio,
   Container,
   MediaQuery,
   Title,
-  createStyles,
+  Center,
+  Button,
 } from '@mantine/core';
 import { useState } from 'react';
 import localFonts from 'next/font/local';
+import { Paslon } from './Paslon';
+import { notifications } from '@mantine/notifications';
+import { IconCircleCheck, IconCircleX, IconClipboard } from '@tabler/icons-react';
 
 const myFont = localFonts({ src: '../fonts/Fontspring-DEMO-greycliffcf-heavy.otf' });
 
-const useStyles = createStyles((theme) => ({}));
-
-export default function ImageCheckboxes() {
+export default function VotePaslon() {
   const [value, setValue] = useState('');
-  const { classes, theme } = useStyles();
+  const [select, setSelect] = useState('');
 
+  const submit = () => {
+    if (value == '') {
+      notifications.show({
+        color: 'red',
+        title: 'Gagal',
+        icon: <IconCircleX />,
+        message: 'Silahkan pilih salah satu paslon',
+        autoClose: 3000,
+      });
+    } else {
+      setSelect(value);
+      notifications.show({
+        color: 'green',
+        title: 'Berhasil',
+        message: 'Berhasil memilih',
+        icon: <IconCircleCheck />,
+        autoClose: 3000,
+      });
+    }
+  };
   return (
     <>
       <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
@@ -47,12 +66,19 @@ export default function ImageCheckboxes() {
           Silahkan Pilih Pasangan Calon Ketua – Wakil dan Wakil Ketua Senat Mahasiswa 2022 – 2023
         </Title>
       </MediaQuery>
-      <Radio.Group withAsterisk value={value} onChange={setValue}>
-        <Group mt="xs">
-          <Container>
+      <Center>
+        <Radio.Group
+          withAsterisk
+          value={value}
+          onChange={setValue}
+          label="Pilih Pasangan Calon"
+          description="Suara bersifat rahasia"
+        >
+          <Group mt="xs" position="apart">
+            {/* <Container> */}
             <SimpleGrid
               cols={3}
-              spacing="lg"
+              spacing="md"
               breakpoints={[
                 { maxWidth: 'md', cols: 2, spacing: 'md' },
                 { maxWidth: 'sm', cols: 1, spacing: 'sm' },
@@ -60,64 +86,75 @@ export default function ImageCheckboxes() {
               ]}
             >
               <Radio
-                classNames={classes}
                 label={
-                  <Card withBorder shadow="sm" radius="md">
-                    <Card.Section mt="sm">
-                      <Image
-                        src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        height="100%"
-                      />
-                    </Card.Section>
-                    <Card.Section withBorder inheritPadding py="xs">
-                      <Group position="apart">
-                        <Text weight={500}>Review pictures</Text>
-                      </Group>
-                    </Card.Section>
-                  </Card>
+                  <Paslon
+                    image={
+                      'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+                    }
+                    title={'Arfi & Anugerah'}
+                    author={'Pasangan Nomor 1'}
+                  />
                 }
                 value="candidate1"
               />
               <Radio
                 label={
-                  <Card withBorder shadow="sm" radius="md">
-                    <Card.Section mt="sm">
-                      <Image
-                        src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        height="100%"
-                      />
-                    </Card.Section>
-                    <Card.Section withBorder inheritPadding py="xs">
-                      <Group position="apart">
-                        <Text weight={500}>Review pictures</Text>
-                      </Group>
-                    </Card.Section>
-                  </Card>
+                  <Paslon
+                    image={
+                      'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+                    }
+                    title={'Gestyan & Kamal'}
+                    author={'Pasangan Nomor 2'}
+                  />
                 }
                 value="candidate2"
               />
               <Radio
                 label={
-                  <Card withBorder shadow="sm" radius="md">
-                    <Card.Section mt="sm">
-                      <Image
-                        src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        height="100%"
-                      />
-                    </Card.Section>
-                    <Card.Section withBorder inheritPadding py="xs">
-                      <Group position="apart">
-                        <Text weight={500}>Review pictures</Text>
-                      </Group>
-                    </Card.Section>
-                  </Card>
+                  <Paslon
+                    image={
+                      'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+                    }
+                    title={'Farhan & Kautsar'}
+                    author={'Pasangan Nomor 3'}
+                  />
                 }
                 value="candidate3"
               />
             </SimpleGrid>
-          </Container>
-        </Group>
-      </Radio.Group>
+            {/* </Container> */}
+          </Group>
+        </Radio.Group>
+      </Center>
+      <Container>
+        {select == '' ? (
+          <Button
+            variant="gradient"
+            color="blue"
+            radius="md"
+            size="lg"
+            mt={20}
+            onClick={submit}
+            leftIcon={<IconClipboard />}
+            fullWidth
+          >
+            Pilih
+          </Button>
+        ) : (
+          <Button
+            variant="gradient"
+            color="blue"
+            radius="md"
+            size="lg"
+            mt={20}
+            leftIcon={<IconClipboard />}
+            fullWidth
+            disabled
+          >
+            Pilih
+          </Button>
+        )}
+      </Container>
     </>
   );
 }

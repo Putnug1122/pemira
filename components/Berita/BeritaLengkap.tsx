@@ -38,9 +38,9 @@ export function BeritaLengkap() {
     article.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
   
-  const displayedCards = filteredCards.slice(startIndex, endIndex);
+  const displayedCards = filteredCards.sort((a, b) => b.id - a.id).slice(startIndex, endIndex);
 
-  const cards = displayedCards.sort((a, b) => b.id - a.id).map((article) => (
+  const cards = displayedCards.map((article) => (
     <Link key={article.title} href={`/detail?judul=${article.title}`} className={classes.card} style={{ width: 'auto', height: 'auto', textDecoration:'none' }}>
       <Card p="md" radius="md" className={classes.card} style={{ width: 'auto', height: 'auto' }}>
         <AspectRatio ratio={1920 / 1080}>
@@ -80,7 +80,6 @@ export function BeritaLengkap() {
   return (
     <Pages
       title="Berita Pemira"
-      // description="Extend default theme with any amount of additional colors, replace shadows, radius, spacing, fonts and many other properties to match your design requirements."
       sx={(theme) => ({
         backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
         display: 'flex',
@@ -91,11 +90,13 @@ export function BeritaLengkap() {
     >
       <Container py="xl" size={'100%'}>
       <Input
-          placeholder="Cari berita berdasarkan judul..."
+          placeholder="Cari judul berita..."
           value={searchQuery}
           onChange={handleSearchChange}
           size="md"
           mb="xl"
+          icon={<IconSearch size='1rem'/>}
+          style={{ maxWidth: 'auto' }}
         />
         <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
           {cards}

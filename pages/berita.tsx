@@ -10,7 +10,6 @@ export default function BeritaPemira() {
         <HeaderMegaMenu />
         <BeritaLengkap />
       </Box>
-      {/* <FooterLinks data={data} /> */}
       <Footer />
     </>
   );

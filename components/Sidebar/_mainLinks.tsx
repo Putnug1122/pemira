@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { IconGitPullRequest, IconAlertCircle, IconMessages } from '@tabler/icons-react';
+import {
+  IconGitPullRequest,
+  IconAlertCircle,
+  IconMessages,
+  IconChartInfographic,
+} from '@tabler/icons-react';
 import { ThemeIcon, UnstyledButton, Group, Text, createStyles } from '@mantine/core';
 import Link from 'next/link';
 import { type Url } from 'url';
@@ -68,6 +73,12 @@ const data = [
     color: 'violet',
     label: 'Senat Mahasiswa Putaran ke-1',
     href: '/pilih',
+  },
+  {
+    icon: <IconChartInfographic size="1rem" />,
+    color: 'yellow',
+    label: 'Hasil',
+    href: '/hasil',
   },
 ];
 

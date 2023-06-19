@@ -6,21 +6,25 @@ import { SemaTimeline } from './demos/Sema';
 import { KetingTimeline } from './demos/Keting';
 
 const data = [
-  { demo: DPMTimeline, icon: IconForms, name: 'Inputs', description: '20+ input components' },
+  { demo: DPMTimeline, icon: IconCalendar, name: 'DPM', description: 'Timeline DPM 2022' },
   {
     demo: SemaTimeline,
     icon: IconCalendar,
-    name: 'Date pickers',
-    description: 'Calendar, date pickers, time inputs',
+    name: 'SEMA',
+    description: 'Timeline Sema 2022',
   },
   {
     demo: KetingTimeline,
     icon: IconCalendar,
-    name: 'Date pickers',
-    description: 'Calendar, date pickers, time inputs',
+    name: 'Ketua Tingkat',
+    description: 'Timeline Ketua Tingkat 2022',
   },
 ];
 
 export function TimelineTab() {
-  return <DemoTabs data={data} title="Timeline" />;
+  return (
+    <section id="timeline">
+      <DemoTabs data={data} title="Timeline" />
+    </section>
+  );
 }

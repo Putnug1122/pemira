@@ -12,8 +12,12 @@ import {
   Checkbox,
   Anchor,
   Stack,
+  Center,
 } from '@mantine/core';
-import { GoogleButton, TwitterButton } from './SocialButtons/SocialButtons';
+import { GoogleButton } from './SocialButtons/SocialButtons';
+import { useRouter } from 'next/navigation';
+import { notifications } from '@mantine/notifications';
+import { IconCheck } from '@tabler/icons-react';
 
 export function AuthenticationForm(props: PaperProps) {
   const [type, toggle] = useToggle(['login', 'register']);
@@ -31,20 +35,32 @@ export function AuthenticationForm(props: PaperProps) {
     },
   });
 
+  const { push } = useRouter();
   return (
     <Paper radius="md" p="xl" withBorder {...props}>
       <Text size="lg" weight={500}>
-        Welcome to Mantine, {type} with
+        Selamat Datang di Pemilihan Raya
       </Text>
 
       <Group grow mb="md" mt="md">
         <GoogleButton radius="xl">Google</GoogleButton>
-        <TwitterButton radius="xl">Twitter</TwitterButton>
+        {/* <TwitterButton radius="xl">Twitter</TwitterButton> */}
       </Group>
 
-      <Divider label="Or continue with email" labelPosition="center" my="lg" />
+      <Divider label="Atau lanjutkan dengan email" labelPosition="center" my="lg" />
 
-      <form onSubmit={form.onSubmit(() => {})}>
+      <form
+        onSubmit={form.onSubmit(() => {
+          // redirect to dashboard
+          notifications.show({
+            title: 'Selamat Datang',
+            message: 'Anda Berhasil Login',
+            color: 'teal',
+            icon: <IconCheck />,
+          });
+          push('/pilih');
+        })}
+      >
         <Stack>
           {type === 'register' && (
             <TextInput
@@ -93,10 +109,9 @@ export function AuthenticationForm(props: PaperProps) {
             onClick={() => toggle()}
             size="xs"
           >
-            {type === 'register'
-              ? 'Already have an account? Login'
-              : "Don't have an account? Register"}
+            {type === 'register' ? 'Sudah punya akun ? Masuk' : 'Belum Punya akun ? Daftar'}
           </Anchor>
+
           <Button type="submit" radius="xl">
             {upperFirst(type)}
           </Button>
