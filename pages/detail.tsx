@@ -1,4 +1,4 @@
-import { HeaderMegaMenu } from '../components/Header/Header';
+import { HeaderMegaMenu } from '../components/Header/Header2';
 import { Card, Image, Text, Container, Box, Flex } from '@mantine/core';
 import { useRouter } from 'next/router';
 import { mockdata } from '../components/Berita/Mockdata';

@@ -6,6 +6,10 @@ import { MantineProvider, ColorScheme, ColorSchemeProvider } from '@mantine/core
 import { Notifications } from '@mantine/notifications';
 import { HeaderMegaMenu } from '../components/Header/Header';
 import '../components/fonts/styles.css';
+import '../components/Galeri/css/base.css'
+import '../components/Galeri/css/sandbox.css'
+import '../components/Galeri/css/embla.css'
+
 import { NavigationProgress } from '@mantine/nprogress';
 
 

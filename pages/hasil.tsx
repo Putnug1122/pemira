@@ -115,6 +115,10 @@ export default function AppShellDemo() {
                 )}
               </Link>
 
+              <Link href="/"  style={{ width: 'auto', height: 'auto', textDecoration: 'none', color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7]}}>
+                &larr; Kembali ke Beranda
+              </Link>
+
               <ActionIcon
                 variant="default"
                 onClick={() => toggleColorScheme()}

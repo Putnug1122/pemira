@@ -1,4 +1,4 @@
-import { HeaderMegaMenu } from '../components/Header/Header';
+import { HeaderMegaMenu } from '../components/Header/Header2';
 import { Box } from '@mantine/core';
 import { BeritaLengkap } from '../components/Berita/BeritaLengkap';
 import { Footer } from '../components/Footer/Footer';
