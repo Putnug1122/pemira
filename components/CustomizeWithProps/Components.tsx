@@ -10,7 +10,7 @@ const data = [
   {
     demo: SemaTimeline,
     icon: IconCalendar,
-    name: 'Sema',
+    name: 'SEMA',
     description: 'Timeline Sema 2022',
   },
   {
@@ -24,7 +24,7 @@ const data = [
 export function TimelineTab() {
   return (
     <section id="timeline">
-      <DemoTabs data={data} title="Timeline" />;
+      <DemoTabs data={data} title="Timeline" />
     </section>
   );
 }

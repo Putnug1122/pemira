@@ -165,6 +165,7 @@ export default function AppShellDemo() {
               responsive: true,
               plugins: {
                 legend: {
+                  onClick: () => {},
                   position: 'bottom',
                   labels: {
                     padding: 20,

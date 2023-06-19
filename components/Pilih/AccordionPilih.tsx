@@ -32,7 +32,7 @@ const useStyles = createStyles((theme) => ({
 const charactersList = [
   {
     id: 'bender',
-    image: 'https://img.icons8.com/clouds/256/000000/futurama-bender.png',
+    image: 'https://pemira.stis.ac.id/assets/img/home/logo_dpm2.png',
     label: 'Dewan Perwakilan Mahasiswa',
     description: 'DPM',
     content:
@@ -41,16 +41,16 @@ const charactersList = [
 
   {
     id: 'carol',
-    image: 'https://img.icons8.com/clouds/256/000000/futurama-mom.png',
+    image: 'https://pemira.stis.ac.id/assets/img/home/logo_sema2.png',
     label: 'Senat mahasiswa',
-    description: 'Sema',
+    description: 'SEMA',
     content:
       'Senat mahasiswa (Sema) merupakan perubahan bentuk dari Badan Eksekutif Mahasiswa (BEM) yang menjalankan fungsi eksekutif Imapolstat. Dalam hal ini, Sema bertugas untuk mengelola keuangan dan inventaris Imapolstat yang akan dipertanggungjawabkan kepada DPM dan/atau Pimpinan Politeknik Statistika STIS. Selain itu, Sema juga berperan sebagai pionir seluruh kegiatan mahasiswa dalam unit kegiatan mahasiswa (UKM) untuk menjalankan program kerjanya. Anggota Sema dipilih melalui open recruitment yang diadakan secara mandiri oleh Ketua Sema.',
   },
 
   {
     id: 'homer',
-    image: 'https://img.icons8.com/clouds/256/000000/homer-simpson.png',
+    image: 'https://pemira.stis.ac.id/assets/img/home/logo_stis.png',
     label: 'Ketua Tingkat',
     description: 'Ketua Tingkat I-IV',
     content:

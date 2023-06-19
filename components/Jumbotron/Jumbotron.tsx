@@ -13,7 +13,7 @@ import {
 import { GithubIcon } from '@mantine/ds';
 import { FEATURES_DATA } from './features';
 import useStyles from './Jumbotron.styles';
-import { IconBook } from '@tabler/icons-react';
+import { IconPin, IconBook } from '@tabler/icons-react';
 
 export function Jumbotron() {
   const { classes, cx } = useStyles();
@@ -52,7 +52,7 @@ export function Jumbotron() {
           pemilihan Ketua, Anggota DPM, Ketua dan Wakil Ketua Sema, serta Ketua Tingkat I-IV.
         </Text>
 
-        <SimpleGrid
+        {/* <SimpleGrid
           cols={3}
           sx={{ maxWidth: rem(800) }}
           spacing={30}
@@ -60,7 +60,7 @@ export function Jumbotron() {
           breakpoints={[{ maxWidth: 800, cols: 1 }]}
         >
           {features}
-        </SimpleGrid>
+        </SimpleGrid> */}
 
         <Group className={classes.controls}>
           <Button
@@ -70,6 +70,7 @@ export function Jumbotron() {
             radius="md"
             className={cx(classes.control, classes.controlPrimary)}
             variant="gradient"
+            leftIcon={<IconPin size={22} />}
           >
             Pilih Sekarang
           </Button>
@@ -85,7 +86,7 @@ export function Jumbotron() {
             leftIcon={<IconBook size={22} />}
             styles={{ leftIcon: { marginRight: rem(10) } }}
           >
-            Pedoman
+            Pedoman Pemira
           </Button>
         </Group>
       </Container>

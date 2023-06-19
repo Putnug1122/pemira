@@ -1,37 +1,15 @@
-import { meta } from '@mantine/ds';
-import { LinksGroupProps } from './LinksGroup/LinksGroup';
+// // import { LinksGroupProps } from './LinksGroup/LinksGroup';
+// // import { IconMail, IconBrandInstagram, IconBrandTwitter, IconBrandFacebook } from '@tabler/icons';
 
-export const FOOTER_LINKS_DATA: LinksGroupProps[] = [
-  {
-    title: 'About',
-    data: [
-      { type: 'gatsby', label: 'Contribute', link: '/pages/contributing/' },
-      { type: 'gatsby', label: 'About Mantine', link: '/pages/about/' },
-      { type: 'gatsby', label: 'Changelog', link: '/pages/changelog/' },
-      { type: 'link', label: 'Releases', link: meta.gitHubLinks.releases },
-    ],
-  },
+// export const FOOTER_LINKS_DATA: LinksGroupProps[] = [
+//   {
+//     title: 'Hubungi Kami',
+//     data: [
+//       { type: 'link', label: 'pemira@stis.ac.id', link: 'pemira@stis.ac.id', icon: typeof IconMail },
+//       { type: 'link', label: 'pemirastis', link: 'https://www.instagram.com/pemirastis/', icon: typeof IconBrandInstagram },
+//       { type: 'link', label: 'pemirastis', link: 'https://twitter.com/pemirastis/', icon: typeof IconBrandTwitter },
+//       { type: 'link', label: 'Pemilihan DPM dan SEMA STIS', link: 'https://web.facebook.com/Pemilihan-DPM-DAN-SEMA-STIS-300299396750251/?_rdc=1&_rdr', icon: typeof IconBrandFacebook },
+//     ],
+//   }
+// ];
 
-  {
-    title: 'Community',
-    data: [
-      { type: 'link', label: 'Chat on Discord', link: meta.discordLink },
-      { type: 'link', label: 'Follow on Twitter', link: meta.twitterLink },
-      { type: 'link', label: 'Follow on Github', link: 'https://github.com/rtivital' },
-      {
-        type: 'link',
-        label: 'GitHub discussions',
-        link: meta.gitHubLinks.discussions,
-      },
-    ],
-  },
-  {
-    title: 'Project',
-    data: [
-      { type: 'link', label: 'Mantine UI', link: meta.uiLink },
-      { type: 'link', label: 'Documentation', link: meta.docsLink },
-      { type: 'link', label: 'Github organization', link: meta.gitHubLinks.organization },
-      { type: 'link', label: 'npm organization', link: meta.npmLink },
-    ],
-  },
-];

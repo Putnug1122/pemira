@@ -1,75 +1,8 @@
 import { HeaderMegaMenu } from '../components/Header/Header';
-import { FooterLinks } from '../components/Footer/Footer Back';
 import { Card, Image, Text, Container, Box, Flex} from '@mantine/core';
 import { useRouter } from 'next/router';
 import { mockdata } from '../components/Berita/Mockdata';
-import { IconCalendarEvent, IconEdit, IconTags } from '@tabler/icons-react';
-
-const data = [
-  {
-    title: 'About',
-    links: [
-      {
-        label: 'Features',
-        link: '#',
-      },
-      {
-        label: 'Pricing',
-        link: '#',
-      },
-      {
-        label: 'Support',
-        link: '#',
-      },
-      {
-        label: 'Forums',
-        link: '#',
-      },
-    ],
-  },
-  {
-    title: 'Project',
-    links: [
-      {
-        label: 'Contribute',
-        link: '#',
-      },
-      {
-        label: 'Media assets',
-        link: '#',
-      },
-      {
-        label: 'Changelog',
-        link: '#',
-      },
-      {
-        label: 'Releases',
-        link: '#',
-      },
-    ],
-  },
-  {
-    title: 'Community',
-    links: [
-      {
-        label: 'Join Discord',
-        link: '#',
-      },
-      {
-        label: 'Follow on Twitter',
-        link: '#',
-      },
-      {
-        label: 'Email newsletter',
-        link: '#',
-      },
-      {
-        label: 'GitHub discussions',
-        link: '#',
-      },
-    ],
-  },
-];
+import { IconCalendarEvent, IconEdit, IconTags} from '@tabler/icons-react';
 
 export default function DetailBerita() {
     const router = useRouter();
@@ -80,7 +13,7 @@ export default function DetailBerita() {
 
   return (
     <>
-      <Box sx={(theme) => ({ position: 'relative', zIndex: 1, boxShadow: theme.shadows.sm })}>
+      <Box sx={(theme) => ({ boxShadow: theme.shadows.sm })}>
         <HeaderMegaMenu />
         <Container py="xl" size={'80%'}>
         <Card p="md" radius="md" style={{ width: '100%', textAlign: 'center' }}>
@@ -168,7 +101,6 @@ export default function DetailBerita() {
         </Card>
         </Container>
       </Box>
-      <FooterLinks data={data}/>
     </>
   );
 }

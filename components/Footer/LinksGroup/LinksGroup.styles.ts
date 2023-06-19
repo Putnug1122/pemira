@@ -32,4 +32,15 @@ export default createStyles((theme) => ({
     marginBottom: `calc(${theme.spacing.xs} / 2)`,
     color: theme.colorScheme === 'dark' ? theme.white : theme.black,
   },
+
+  icon: {
+    marginRight: rem(10),
+    // border: '1px solid red',
+  },
+
+  label: {
+    alignItems: 'center',
+    // border: '1px solid red',
+    // marginBottom: rem(10),
+  },
 }));
