@@ -33,29 +33,31 @@ function Demo() {
 `;
 
   return (
-    <PageSection
-      title="Sambutan Ketua PAPERA 2022"
-      sx={{ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white }}
-    >
-      <SimpleGrid
-        cols={2}
-        mt={30}
-        spacing={60}
-        breakpoints={[{ maxWidth: 'sm', cols: 1, spacing: 30 }]}
-        pb={60}
+    <section id="sambutan">
+      <PageSection
+        title="Sambutan Ketua PAPERA 2022"
+        sx={{ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white }}
       >
-        <div>
-          <Image src={imageUrl} radius="md" className={classes.image} />
-        </div>
-        <div>
-          <Blockquote cite="– Wildan Miftah Alfarid" color="blue">
-            Pemira adalah pesta demokrasi yang memfasilitasi regenerasi lembaga kampus. Dalam waktu
-            dekat, pengurus DPM, Sema, dan Ketua Tingkat akan digantikan untuk tahun akademik
-            2022/2023. Regenerasi kepemimpinan diperlukan untuk melanjutkan program dan memberikan
-            inovasi ke depan. Panitia Pemilihan Raya (Papera) dibentuk berdasarkan AD/ART Imapolstat
-            sebagai badan independen yang bertanggung jawab atas pelaksanaan Pemira.
-          </Blockquote>
-          {/* <Text size="lg">
+        <SimpleGrid
+          cols={2}
+          mt={30}
+          spacing={60}
+          breakpoints={[{ maxWidth: 'sm', cols: 1, spacing: 30 }]}
+          pb={60}
+        >
+          <div>
+            <Image src={imageUrl} radius="md" className={classes.image} />
+          </div>
+          <div>
+            <Blockquote cite="– Wildan Miftah Alfarid" color="blue">
+              Pemira adalah pesta demokrasi yang memfasilitasi regenerasi lembaga kampus. Dalam
+              waktu dekat, pengurus DPM, Sema, dan Ketua Tingkat akan digantikan untuk tahun
+              akademik 2022/2023. Regenerasi kepemimpinan diperlukan untuk melanjutkan program dan
+              memberikan inovasi ke depan. Panitia Pemilihan Raya (Papera) dibentuk berdasarkan
+              AD/ART Imapolstat sebagai badan independen yang bertanggung jawab atas pelaksanaan
+              Pemira.
+            </Blockquote>
+            {/* <Text size="lg">
             Pemira adalah pesta demokrasi yang memfasilitasi regenerasi lembaga kampus. Dalam waktu
             dekat, pengurus DPM, Sema, dan Ketua Tingkat akan digantikan untuk tahun akademik
             2022/2023. Regenerasi kepemimpinan diperlukan untuk melanjutkan program dan memberikan
@@ -63,7 +65,7 @@ function Demo() {
             sebagai badan independen yang bertanggung jawab atas pelaksanaan Pemira.
           </Text> */}
 
-          {/* <Prism
+            {/* <Prism
             language="tsx"
             noCopy
             mt="xl"
@@ -78,7 +80,7 @@ function Demo() {
             {code}
           </Prism> */}
 
-          {/* <Group position="center" mt="xl">
+            {/* <Group position="center" mt="xl">
             <Button
               variant="default"
               radius="md"
@@ -94,8 +96,9 @@ function Demo() {
               Toggle color scheme
             </Button>
           </Group> */}
-        </div>
-      </SimpleGrid>
-    </PageSection>
+          </div>
+        </SimpleGrid>
+      </PageSection>
+    </section>
   );
 }

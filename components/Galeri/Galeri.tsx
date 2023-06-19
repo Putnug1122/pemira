@@ -87,22 +87,24 @@ export function Galeri() {
   ));
 
   return (
-    <PageSection
-      title="Galeri"
-      // description="Extend default theme with any amount of additional colors, replace shadows, radius, spacing, fonts and many other properties to match your design requirements."
-      sx={(theme) => ({
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
-      })}
-    >
-      <Carousel
-        slideSize="50%"
-        breakpoints={[{ maxWidth: 'sm', slideSize: '100%', slideGap: rem(2) }]}
-        slideGap="xl"
-        align="start"
-        slidesToScroll={mobile ? 1 : 2}
+    <section id="galeri">
+      <PageSection
+        title="Galeri"
+        // description="Extend default theme with any amount of additional colors, replace shadows, radius, spacing, fonts and many other properties to match your design requirements."
+        sx={(theme) => ({
+          backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
+        })}
       >
-        {slides}
-      </Carousel>
-    </PageSection>
+        <Carousel
+          slideSize="50%"
+          breakpoints={[{ maxWidth: 'sm', slideSize: '100%', slideGap: rem(2) }]}
+          slideGap="xl"
+          align="start"
+          slidesToScroll={mobile ? 1 : 2}
+        >
+          {slides}
+        </Carousel>
+      </PageSection>
+    </section>
   );
 }

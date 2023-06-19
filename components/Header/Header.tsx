@@ -26,6 +26,8 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconSun, IconMoonStars } from '@tabler/icons-react';
 import { AuthenticationForm } from '../Login/Login';
 import { useState } from 'react';
+import { Link as ReactLink } from 'react-scroll';
+import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -55,7 +57,7 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  subLink: {
+  subReactLink: {
     width: '100%',
     padding: `${theme.spacing.xs} ${theme.spacing.md}`,
     borderRadius: theme.radius.md,
@@ -115,15 +117,24 @@ export function HeaderMegaMenu() {
           )}
 
           <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
-            <a href="#" className={classes.link}>
-              Home
-            </a>
-            <a href="#" className={classes.link}>
-              Learn
-            </a>
-            <a href="#" className={classes.link}>
-              Academy
-            </a>
+            <ReactLink to="pemilihan" className={classes.link} smooth>
+              Pemilihan
+            </ReactLink>
+            <ReactLink to="sambutan" className={classes.link} smooth>
+              Sambutan
+            </ReactLink>
+            <ReactLink to="timeline" className={classes.link} smooth>
+              Timeline
+            </ReactLink>
+            <ReactLink to="galeri" className={classes.link} smooth>
+              Galeri
+            </ReactLink>
+            <ReactLink to="berita" className={classes.link} smooth>
+              Berita
+            </ReactLink>
+            <Link href="/hasil" className={classes.link}>
+              Hasil
+            </Link>
           </Group>
 
           <Group className={classes.hiddenMobile}>
@@ -183,15 +194,24 @@ export function HeaderMegaMenu() {
         <ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md">
           <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
 
-          <a href="#" className={classes.link}>
-            Home
-          </a>
-          <a href="#" className={classes.link}>
-            Learn
-          </a>
-          <a href="#" className={classes.link}>
-            Academy
-          </a>
+          <ReactLink to="pemilihan" className={classes.link} smooth>
+            Pemilihan
+          </ReactLink>
+          <ReactLink to="sambutan" className={classes.link} smooth>
+            Sambutan
+          </ReactLink>
+          <ReactLink to="timeline" className={classes.link} smooth>
+            Timeline
+          </ReactLink>
+          <ReactLink to="galeri" className={classes.link} smooth>
+            Galeri
+          </ReactLink>
+          <ReactLink to="berita" className={classes.link} smooth>
+            Berita
+          </ReactLink>
+          <Link href="/hasil" className={classes.link}>
+            Hasil
+          </Link>
 
           <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
 

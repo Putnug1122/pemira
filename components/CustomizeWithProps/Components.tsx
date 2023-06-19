@@ -22,5 +22,9 @@ const data = [
 ];
 
 export function TimelineTab() {
-  return <DemoTabs data={data} title="Timeline" />;
+  return (
+    <section id="timeline">
+      <DemoTabs data={data} title="Timeline" />;
+    </section>
+  );
 }
