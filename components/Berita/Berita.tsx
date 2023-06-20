@@ -10,11 +10,14 @@ import {
   rem,
   Box,
   Flex,
+  Group,
+  ActionIcon,
 } from '@mantine/core';
 import { IconCalendarEvent, IconEdit } from '@tabler/icons-react';
 import { PageSection } from '../PageSection/PageSection';
 import { mockdata } from './Mockdata';
 import Link from 'next/link';
+import { ArticleCardFooter } from './NewCard';
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -30,6 +33,13 @@ const useStyles = createStyles((theme) => ({
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 600,
   },
+  footer: {
+    padding: `${theme.spacing.xs} ${theme.spacing.lg}`,
+    marginTop: theme.spacing.md,
+    borderTop: `${rem(1)} solid ${
+      theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
+    }`,
+  },
 }));
 
 export function Berita() {
@@ -43,45 +53,14 @@ export function Berita() {
       key={article.title}
       href={`/detail?judul=${article.title}`}
       className={classes.card}
-      style={{ width: 'auto', height: 'auto', textDecoration: 'none' }}
+      style={{ textDecoration: 'none' }}
     >
-      <Card p="md" radius="md" className={classes.card} style={{ width: 'auto', height: 'auto' }}>
-        <AspectRatio ratio={1920 / 1080}>
-          <Image src={article.image} />
-        </AspectRatio>
-        <Text className={classes.title} mt={15}>
-          {article.title}
-        </Text>
-        <Text mt={10} size="sm" align="justify">
-          {article.excerpt}
-        </Text>
-        <Box mt={20}>
-          <Flex align="center" justify="space-between">
-            <Flex align="center">
-              <IconCalendarEvent
-                size={18}
-                strokeWidth={2}
-                color={'grey'}
-                style={{ marginRight: '0.5rem' }}
-              />
-              <Text size="xs" color="gray" transform="uppercase" weight={700}>
-                {article.date}
-              </Text>
-            </Flex>
-            <Flex align="center">
-              <IconEdit
-                size={18}
-                strokeWidth={2}
-                color={'grey'}
-                style={{ marginRight: '0.5rem' }}
-              />
-              <Text size="xs" color="gray" transform="uppercase" weight={700}>
-                {article.author}
-              </Text>
-            </Flex>
-          </Flex>
-        </Box>
-      </Card>
+      <ArticleCardFooter
+        date={article.date}
+        image={article.image}
+        tags={article.tags}
+        title={article.title}
+      />
     </Link>
   ));
 

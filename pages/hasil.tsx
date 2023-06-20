@@ -115,9 +115,9 @@ export default function AppShellDemo() {
                 )}
               </Link>
 
-              <Link href="/"  style={{ width: 'auto', height: 'auto', textDecoration: 'none', color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7]}}>
+              {/* <Link href="/"  style={{ width: 'auto', height: 'auto', textDecoration: 'none', color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7]}}>
                 &larr; Kembali ke Beranda
-              </Link>
+              </Link> */}
 
               <ActionIcon
                 variant="default"
@@ -162,22 +162,23 @@ export default function AppShellDemo() {
               Pemilihan Ketua dan Wakil Ketua Senat Mahasiswa Putaran ke-1
             </Title>
           </MediaQuery>
-          <div style={{ maxWidth: '500px', maxHeight: '500px', margin: 'auto'}}>
-            <Doughnut style={{alignItems:'center', marginTop:'2.5em'}}
+          <div style={{ maxWidth: '500px', maxHeight: '500px', margin: 'auto' }}>
+            <Doughnut
+              style={{ alignItems: 'center', marginTop: '2.5em' }}
               data={data}
               options={{
-              responsive: true,
-              plugins: {
-                legend: {
-                  onClick: () => {},
-                  position: 'bottom',
-                  labels: {
-                    padding: 20,
-                    usePointStyle: true,
-                    pointStyle: 'circle',
+                responsive: true,
+                plugins: {
+                  legend: {
+                    onClick: () => {},
+                    position: 'bottom',
+                    labels: {
+                      padding: 20,
+                      usePointStyle: true,
+                      pointStyle: 'circle',
+                    },
                   },
                 },
-              },
               }}
             />
           </div>

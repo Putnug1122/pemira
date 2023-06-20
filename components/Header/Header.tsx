@@ -91,6 +91,11 @@ const useStyles = createStyles((theme) => ({
       display: 'none',
     },
   },
+
+  header: {
+    // sticky
+    position: 'fixed',
+  },
 }));
 
 export function HeaderMegaMenu() {
@@ -106,8 +111,8 @@ export function HeaderMegaMenu() {
   };
 
   return (
-    <Box pb={0}>
-      <Header height={60} px="md">
+    <Box pb={60}>
+      <Header height={60} px="md" className={classes.header}>
         <Group position="apart" sx={{ height: '100%' }}>
           {/* <MantineLogo size={30} /> */}
           {theme.colorScheme === 'dark' ? (
@@ -201,23 +206,23 @@ export function HeaderMegaMenu() {
           <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
 
           {/* @ts-ignore */}
-          <ReactLink to="pemilihan" className={classes.link} smooth>
+          <ReactLink to="pemilihan" className={classes.link} smooth onClick={closeDrawer}>
             Pemilihan
           </ReactLink>
           {/* @ts-ignore */}
-          <ReactLink to="sambutan" className={classes.link} smooth>
+          <ReactLink to="sambutan" className={classes.link} smooth onClick={closeDrawer}>
             Sambutan
           </ReactLink>
           {/* @ts-ignore */}
-          <ReactLink to="timeline" className={classes.link} smooth>
+          <ReactLink to="timeline" className={classes.link} smooth onClick={closeDrawer}>
             Timeline
           </ReactLink>
           {/* @ts-ignore */}
-          <ReactLink to="galeri" className={classes.link} smooth>
+          <ReactLink to="galeri" className={classes.link} smooth onClick={closeDrawer}>
             Galeri
           </ReactLink>
           {/* @ts-ignore */}
-          <ReactLink to="berita" className={classes.link} smooth>
+          <ReactLink to="berita" className={classes.link} smooth onClick={closeDrawer}>
             Berita
           </ReactLink>
           <Link href="/hasil" className={classes.link}>

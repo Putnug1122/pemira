@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
-import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio, Pagination, Box, Flex, Input } from '@mantine/core';
+import {
+  createStyles,
+  SimpleGrid,
+  Card,
+  Image,
+  Text,
+  Container,
+  AspectRatio,
+  Pagination,
+  Box,
+  Flex,
+  Input,
+} from '@mantine/core';
 import { IconCalendarEvent, IconEdit, IconSearch } from '@tabler/icons-react';
 import { Pages } from '../Pages/Pages';
 import { mockdata } from './Mockdata';
@@ -32,37 +44,56 @@ export function BeritaLengkap() {
   // Menghitung indeks awal dan akhir berita yang akan ditampilkan pada halaman saat ini
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  
+
   // Filter berita berdasarkan pencarian
   const filteredCards = mockdata.filter((article) =>
     article.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
-  
+
   const displayedCards = filteredCards.sort((a, b) => b.id - a.id).slice(startIndex, endIndex);
 
   const cards = displayedCards.map((article) => (
-    <Link key={article.title} href={`/detail?judul=${article.title}`} className={classes.card} style={{ width: 'auto', height: 'auto', textDecoration:'none' }}>
+    <Link
+      key={article.title}
+      href={`/detail?judul=${article.title}`}
+      className={classes.card}
+      style={{ width: 'auto', height: 'auto', textDecoration: 'none' }}
+    >
       <Card p="md" radius="md" className={classes.card} style={{ width: 'auto', height: 'auto' }}>
         <AspectRatio ratio={1920 / 1080}>
           <Image src={article.image} />
         </AspectRatio>
-        <Text className={classes.title} mt={15} align='start'>
+        <Text className={classes.title} mt={15} align="start">
           {article.title}
         </Text>
-        <Text mt={10} size="sm" align='justify'>
+        <Text mt={10} size="sm" align="justify">
           {article.excerpt}
         </Text>
         <Box mt={20}>
-        <Flex align="center" justify="space-between">
-          <Flex align="center">
-          <IconCalendarEvent size={18} strokeWidth={2} color={'grey'} style={{ marginRight: '0.5rem' }}/>
-            <Text size="xs" color="gray" transform="uppercase" weight={700}>{article.date}</Text>
+          <Flex align="center" justify="space-between">
+            <Flex align="center">
+              <IconCalendarEvent
+                size={18}
+                strokeWidth={2}
+                color={'grey'}
+                style={{ marginRight: '0.5rem' }}
+              />
+              <Text size="xs" color="gray" transform="uppercase" weight={700}>
+                {article.date}
+              </Text>
+            </Flex>
+            <Flex align="center">
+              <IconEdit
+                size={18}
+                strokeWidth={2}
+                color={'grey'}
+                style={{ marginRight: '0.5rem' }}
+              />
+              <Text size="xs" color="gray" transform="uppercase" weight={700}>
+                {article.author}
+              </Text>
+            </Flex>
           </Flex>
-          <Flex align="center">
-          <IconEdit size={18} strokeWidth={2} color={'grey'} style={{ marginRight: '0.5rem' }}/>
-            <Text size="xs" color="gray" transform="uppercase" weight={700}>{article.author}</Text>
-          </Flex>
-        </Flex>
         </Box>
       </Card>
     </Link>
@@ -85,24 +116,24 @@ export function BeritaLengkap() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        textAlign: 'center'
+        textAlign: 'center',
       })}
     >
       <Container py="xl" size={'100%'}>
-      <Input
+        <Input
           placeholder="Cari judul berita..."
           value={searchQuery}
           onChange={handleSearchChange}
           size="md"
           mb="xl"
-          icon={<IconSearch size='1rem'/>}
+          icon={<IconSearch size="1rem" />}
           style={{ maxWidth: 'auto' }}
         />
         <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
           {cards}
         </SimpleGrid>
       </Container>
-      
+
       <Pagination
         total={totalPages}
         value={currentPage}
