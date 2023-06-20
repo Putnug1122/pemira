@@ -1,18 +1,18 @@
 import React, { useEffect, useRef } from 'react';
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom/client';
 import { Button, Paper, Text, Title, useMantineTheme, rem } from '@mantine/core';
 import { PageSection } from '../PageSection/PageSection';
 // import useStyles from './Geleri.styles';
 import { useMediaQuery } from '@mantine/hooks';
 import { Carousel } from '@mantine/carousel';
-import GaleriEmbla from './GaleriEmbla'
+import GaleriEmbla from './GaleriEmbla';
 import { EmblaOptionsType, EmblaCarouselType } from 'embla-carousel-react';
 import * as Icon from 'react-feather';
 import Link from 'next/link';
 
-const OPTIONS: EmblaOptionsType = {}
-const SLIDE_COUNT = 6
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+const OPTIONS: EmblaOptionsType = {};
+const SLIDE_COUNT = 6;
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 export const Galeri: React.FC = () => {
   const emblaApiRef = useRef<EmblaCarouselType | null>(null);
@@ -38,39 +38,31 @@ export const Galeri: React.FC = () => {
     >
       <main className="sandbox">
         <section className="sandbox__carousel">
-          <GaleriEmbla slides={SLIDES} options={OPTIONS} emblaApiRef={emblaApiRef}/>
+          <GaleriEmbla slides={SLIDES} options={OPTIONS} emblaApiRef={emblaApiRef} />
         </section>
       </main>
 
       <div style={{ position: 'relative' }}>
-        <Link href="/galeri" style={{ textDecoration:'none' }}>
-        <Button
-          variant="gradient"
-          gradient={{ from: 'indigo', to: 'cyan', deg: 45 }}
-          radius="xl"
-          size="xl"
-          style={{
-            marginTop: rem(25),
-            display: 'flex',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            justifyContent: 'center',
-            padding: '12px 16px',
-            fontSize: '16px',
-          }}
-        >
-          Lihat Semua
-          <Icon.ArrowRight 
-                        size={20}
-                        style={{ marginLeft: '10px' }}
-                    />
-        </Button>
+        <Link href="/galeri" style={{ textDecoration: 'none' }}>
+          <Button
+            variant="light"
+            radius="xl"
+            size="md"
+            style={{
+              marginTop: rem(25),
+              display: 'flex',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              justifyContent: 'center',
+            }}
+          >
+            Lebih Semua
+          </Button>
         </Link>
       </div>
-
     </PageSection>
-);
-}
+  );
+};
 
 // ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 //   <React.StrictMode>
@@ -159,23 +151,23 @@ export const Galeri: React.FC = () => {
 //     </Carousel.Slide>
 //   ));
 
-  // return (
-  //   <PageSection
-  //     title="Galeri"
-  //     // description="Extend default theme with any amount of additional colors, replace shadows, radius, spacing, fonts and many other properties to match your design requirements."
-  //     sx={(theme) => ({
-  //       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
-  //     })}
-  //   >
-  //     <Carousel
-  //       slideSize="50%"
-  //       breakpoints={[{ maxWidth: 'sm', slideSize: '100%', slideGap: rem(2) }]}
-  //       slideGap="xl"
-  //       align="start"
-  //       slidesToScroll={mobile ? 1 : 2}
-  //     >
-  //       {slides}
-  //     </Carousel>
-  //   </PageSection>
-  // );
+// return (
+//   <PageSection
+//     title="Galeri"
+//     // description="Extend default theme with any amount of additional colors, replace shadows, radius, spacing, fonts and many other properties to match your design requirements."
+//     sx={(theme) => ({
+//       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
+//     })}
+//   >
+//     <Carousel
+//       slideSize="50%"
+//       breakpoints={[{ maxWidth: 'sm', slideSize: '100%', slideGap: rem(2) }]}
+//       slideGap="xl"
+//       align="start"
+//       slidesToScroll={mobile ? 1 : 2}
+//     >
+//       {slides}
+//     </Carousel>
+//   </PageSection>
+// );
 // }

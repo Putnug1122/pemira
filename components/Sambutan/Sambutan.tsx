@@ -14,9 +14,11 @@ import { IconFlame, IconMoonStars, IconSun } from '@tabler/icons-react';
 import { PageSection } from '../PageSection/PageSection';
 import image from './dark-theme-image.png';
 import useStyles from './Sambutan.styles';
+import imageSVG from './image.svg';
 
 export function Sambutan() {
   const imageUrl: string = image.src;
+  const imageSVGUrl: string = imageSVG.src;
   const { classes, theme } = useStyles();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 
@@ -39,11 +41,23 @@ function Demo() {
         sx={{ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white }}
       >
         <SimpleGrid
-          cols={1}
+          cols={2}
           mt={30}
+          spacing={60}
+          breakpoints={[{ maxWidth: 'sm', cols: 1, spacing: 30 }]}
+          pb={60}
         >
-          <div style={{ display:'flex', alignItems:'center' }}>
-            <Image src='https://pemira.stis.ac.id/assets/img/home/Logo_Papera.png' radius="md" className={classes.image} style={{ width:'auto', height:'auto' }}/>
+          <div>
+            <Image
+              src={imageSVGUrl}
+              radius="md"
+              className={classes.image}
+              // width="469.01px"
+              // height="330.5px"
+              // style={{ width: 'auto', height: 'auto' }}
+            />
+          </div>
+          <div>
             <Blockquote cite="– Wildan Miftah Alfarid" color="blue">
               Pemira adalah pesta demokrasi yang memfasilitasi regenerasi lembaga kampus. Dalam
               waktu dekat, pengurus DPM, Sema, dan Ketua Tingkat akan digantikan untuk tahun

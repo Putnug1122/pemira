@@ -1,21 +1,21 @@
-import { IconScale, IconRocket, IconLifebuoy } from '@tabler/icons-react';
+import { IconRocket, IconNews, IconMoodSilence } from '@tabler/icons-react';
 
 export const FEATURES_DATA = [
   {
-    icon: IconScale,
-    title: 'Free and open source',
-    description: 'All packages have MIT license, you can use Mantine in any project',
+    icon: IconNews,
+    title: 'Tampilan Baru',
+    description: 'Menggunakan UI baru yang lebih modern',
   },
 
   {
-    icon: IconLifebuoy,
-    title: 'TypeScript based',
-    description: 'Build type safe applications, all components and hooks export types',
+    icon: IconMoodSilence,
+    title: 'Suara Rahasia',
+    description: 'Suara pemilih akan terjaga kerahasiaannya',
   },
 
   {
     icon: IconRocket,
-    title: 'Use anywhere',
-    description: 'Mantine supports all modern frameworks: Next.js, Remix, etc.',
+    title: 'Pemilihan Cepat',
+    description: 'Memilih kandidat dengan cepat dan mudah',
   },
 ];
