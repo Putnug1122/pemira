@@ -115,11 +115,13 @@ export function HeaderMegaMenu() {
       <Header height={60} px="md" className={classes.header}>
         <Group position="apart" sx={{ height: '100%' }}>
           {/* <MantineLogo size={30} /> */}
-          {theme.colorScheme === 'dark' ? (
-            <Image src="/3.png" width="114.13px" height="30px" />
-          ) : (
-            <Image src="/2.png" width="114.13px" height="30px" />
-          )}
+          <Link href="/">
+            {theme.colorScheme === 'dark' ? (
+              <Image src="/3.png" width="114.13px" height="30px" />
+            ) : (
+              <Image src="/2.png" width="114.13px" height="30px" />
+            )}
+          </Link>
 
           <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
             {/* 
